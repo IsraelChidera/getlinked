@@ -1,7 +1,7 @@
 import Container from '../elements/Container';
 import Card from '../elements/Card';
 import star1 from '../../assets/rules-star-1.png';
-import star2 from '../../assets/rules-star-2.png';
+// import star2 from '../../assets/rules-star-2.png';
 import brightStar from '../../assets/attributes-star.png';
 import faqImg from '../../assets/faq-img.png';
 import faq1 from '../../assets/faq-1.png';

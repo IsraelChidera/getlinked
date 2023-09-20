@@ -4,6 +4,7 @@ import Introduction from "../components/widgets/Introduction"
 import KeyAttributes from "../components/widgets/KeyAttributes"
 import Navbar from "../components/widgets/Navbar"
 import Rules from "../components/widgets/Rules"
+import Timeline from "../components/widgets/Timeline"
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <Rules />
             <KeyAttributes />
             <Faq />
+            <Timeline />
         </section>
     )
 }
