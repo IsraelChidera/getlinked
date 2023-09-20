@@ -1,3 +1,4 @@
+import Faq from "../components/widgets/Faq"
 import Hero from "../components/widgets/Hero"
 import Introduction from "../components/widgets/Introduction"
 import KeyAttributes from "../components/widgets/KeyAttributes"
@@ -13,6 +14,7 @@ const Home = () => {
             <Introduction />
             <Rules />
             <KeyAttributes />
+            <Faq />
         </section>
     )
 }
