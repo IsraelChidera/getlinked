@@ -1,8 +1,14 @@
+type ButtonProps = {
+    children: React.ReactNode,
+    className?: string,
+    onClick?: any
+}
 
-
-const index = () => {
+const index = ({className, children, onClick}: ButtonProps) => {
   return (
-    <div>index</div>
+    <button onClick={onClick} className={`${className} text-white text-xs bg-primary py-3 px-10`}>
+        {children}
+    </button>
   )
 }
 
