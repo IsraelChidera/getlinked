@@ -1,34 +1,28 @@
 import Container from '../elements/Container';
 import Card from '../elements/Card';
-import heroImg from '../../assets/hero-img2.png';
-import arrow from '../../assets/arrow.png';
-import star2 from '../../assets/star2.png';
-import star3 from '../../assets/star3.png';
+import rulesImg from '../../assets/rules-img.png';
+import star1 from '../../assets/rules-star-1.png';
+import star2 from '../../assets/rules-star-2.png';
+import lens from '../../assets/rules-lens.png';
 
-const Introduction = () => {
+const Rules = () => {
     return (
         <Card>
-            <Container className='grid grid-cols-2'>
-                <div className='relative'>
-                    <img className='absolute top-10 left-0' src={star2} alt="star icon" />
-                    <img src={heroImg} alt="info globe" />
-                    <img className='absolute bottom-0 right-0' src={arrow} alt="arrow icon" />
-                </div>
-
-                <div className='flex items-center justify-center'>
-                    <div>
+            <Container className='grid grid-cols-2 gap-x-4'>
+                <div className='flex items-center justify-center relative'>
+                    <div className='relative z-20'>
                         <h2 className='text-4xl relative font-bold'>
                             <span>
-                                Introduction to getlinked
+                                Rules and
                             </span> <br />
                             <span className='text-primary'>
-                                tech Hackathon 1.0
+                                Guidelines
                             </span>
 
-                            <img className='absolute top-1 right-10' src={star3} alt="star icon" />
+                            <img className='absolute top-0 right-40' src={star1} alt="star icon" />
                         </h2>
 
-                        <p className='text-sm mt-6 leading-7'>
+                        <p className='text-sm mt-6 leading-7 '>
                             Our tech hackathon is a melting pot of visionaries, and its purpose is as
                             clear as day: to shape the future. Whether you're a coding genius, a
                             design maverick, or a concept wizard, you'll have the chance to transform
@@ -36,13 +30,23 @@ const Introduction = () => {
                             of technology, and creating solutions that can change the world,
                             that's what we're all about!
                         </p>
+
+                        <img className='absolute bottom-0 right-0' src={star2} alt="star icon" />
                     </div>
 
-                    
+                    <img className='absolute z-10 -top-10 left-0 ' src={lens} alt="lens" /> 
+                </div>
+
+                <div>
+                    <div className='relative'>
+
+                        <img src={rulesImg} alt="info globe" />
+
+                    </div>
                 </div>
             </Container>
         </Card>
     )
 }
 
-export default Introduction
+export default Rules

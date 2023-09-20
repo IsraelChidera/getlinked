@@ -12,7 +12,7 @@ import bulb from '../../assets/bulb.svg';
 
 const Hero = () => {
     return (
-        <header className='relative pt-10'>
+        <header className='relative pt-10 border-b border-b-gray-500/50 '>
             <img className='absolute z-10 -top-40 -left-20' src={lens1} alt="lens" />
 
             <div className='flex justify-end pr-10'>
@@ -72,8 +72,8 @@ const Hero = () => {
                 </div>
 
                 <div className='relative'>
-                    <img className='z-20 relative' src={heroImg} alt="hero image" />
-                    <img className='z-10 absolute top-0 left-0' src={bubbles} alt="bubbles" />
+                    <img className='z-10 relative' src={heroImg} alt="hero image" />
+                    <img className='z-20 absolute -top-10 left-0' src={bubbles} alt="bubbles" />
                 </div>
             </div>
         </header>

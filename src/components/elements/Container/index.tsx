@@ -6,7 +6,7 @@ type ContainerProps = {
 
 const index = ({ children, className }: ContainerProps) => {
     return (
-        <div className={`${className} mx-auto md:w-11/12`}>
+        <div className={`${className} mx-auto md:w-10/12`}>
             {children}
         </div>
     )
