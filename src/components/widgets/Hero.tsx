@@ -6,6 +6,9 @@ import line from '../../assets/line.svg';
 import star from '../../assets/star.png';
 import heroImg from '../../assets/hero-img.png';
 import bubbles from '../../assets/bubbles.png';
+import chain from '../../assets/chain.svg';
+import fire from '../../assets/fire.svg';
+import bulb from '../../assets/bulb.svg';
 
 const Hero = () => {
     return (
@@ -21,14 +24,51 @@ const Hero = () => {
                 </div>
             </div>
 
-            <img className='absolute z-20 top-0 -left-20' src={star} alt="star" />
-
             <div className='grid grid-cols-2 pt-20'>
-                <div>
-                    <h1>
-                        getlinked Tech{" "} <br/>
-                        Hackathon <span> 1.0 </span>
-                    </h1>
+
+                <div className='flex justify-center items-center relative'>
+                    <img src={star} alt="star" className='absolute -top-4 left-20' />
+                    <div className='relative z-50'>
+                        <div>
+                            <h1 className='text-6xl font-bold relative'>
+                                <span>getlinked Tech</span>
+                                <img className=' absolute -top-14 right-28 ' src={bulb} alt="chain" />
+                            </h1>
+                            <div className='text-6xl font-bold flex space-x-2 items-center'>
+                                <h1>
+                                    Hackathon <span className='text-primary'> 1.0 </span>
+                                </h1>
+                                <img className='w-10 h-15' src={chain} alt="chain" />
+                                <img className='w-10 h-15' src={fire} alt="fire spark" />
+                            </div>
+                        </div>
+
+                        <p className='text-sm mt-4'>
+                            Participate in getlinked tech Hackathon 2023 stand <br />
+                            a chance to win a Big prize
+                        </p>
+
+                        <Button className='mt-6'>
+                            Register
+                        </Button>
+
+                        <div className='mt-20 flex space-x-6'>
+                            <p>
+                                <span className='text-5xl'>00</span>
+                                <span className='text-xs'>H</span>
+                            </p>
+
+                            <p>
+                                <span className='text-5xl'>00</span>
+                                <span className='text-xs'>M</span>
+                            </p>
+
+                            <p>
+                                <span className='text-5xl'>00</span>
+                                <span className='text-xs'>S</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='relative'>
