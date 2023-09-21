@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import Container from '../elements/Container';
+// import { NavLink } from 'react-router-dom';
+// import Container from '../elements/Container';
 import Button from '../elements/Button';
 import lens1 from '../../assets/lens-1.png';
 import line from '../../assets/line.svg';
