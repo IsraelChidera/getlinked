@@ -9,12 +9,15 @@ import product3 from '../../assets/product3.png';
 import product4 from '../../assets/product4.png';
 import product5 from '../../assets/product5.png';
 import product6 from '../../assets/product6.png';
+import star2 from '../../assets/rules-star-2.png';
+import brightStar from '../../assets/attributes-star.png';
 
 const Partners = () => {
     return (
         <div className='relative '>
             <img src={lens} alt="purple lens" className='z-10 absolute top-0 left-0' />
             <img src={lens2} alt="purple lens" className='z-10 absolute bottom-0 right-0' />
+            <img className='absolute -top-10 left-20' src={brightStar} alt="star icon" />
             <Card>
                 <Container>
                     <div className='flex items-center justify-center'>
@@ -30,6 +33,7 @@ const Partners = () => {
                     </div>
 
                     <div className='relative z-50 p-10 mt-10'>
+                        <img className='absolute z-50 inset-x-1/2 bottom-0' src={star2} alt="star icon" />
                         <div className='grid grid-cols-3 gap-y-10'>
                             <div className=' border-b border-r flex items-center justify-center'>
                                 <img src={product1} className="p-2" alt="logo that support" />

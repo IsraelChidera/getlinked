@@ -21,7 +21,6 @@ const Prizes = () => {
                             <img src={prizeImg} alt="prize image" />
                         </div>
 
-
                     </div>
 
                     <div>
