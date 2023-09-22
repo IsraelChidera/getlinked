@@ -1,6 +1,5 @@
 
 import Container from '../elements/Container';
-import Card from '../elements/Card';
 import faqBrightStar from '../../assets/faq-bright-star.png';
 import lens from '../../assets/privacy-lens.png';
 import lock from '../../assets/lock-img.png';
@@ -14,7 +13,7 @@ const Privacy = () => {
             <img className='absolute z-40 bottom-10 left-0 inset-x-1/2' src={faqBrightStar} alt="faq image" />
             <img className='absolute z-40 top-10 inset-x-1/2' src={faqBrightStar} alt="faq image" />
             <img className='absolute z-10 top-40 -left-20' src={lens} alt="blur image" />
-            <Card className='my-10'>
+            <div className='my-10'>
                 <Container className='grid grid-cols-2 gap-x-2 py-24'>
                     <div className='flex items-center justify-center relative'>
                         <div className='relative z-20'>
@@ -92,7 +91,7 @@ const Privacy = () => {
                         </div>
                     </div>
                 </Container>
-            </Card>
+            </div>
         </div>
     )
 }

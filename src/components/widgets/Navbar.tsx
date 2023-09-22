@@ -1,19 +1,28 @@
 import logo from '/logo.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Container from '../elements/Container';
 import Button from '../elements/Button';
 
+
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
+    const handleRegisterClick = () => {
+        navigate("/register")
+    }
     return (
-        <nav className='pt-10 pb-4 border-b border-b-gray-500/50 '>
+        <nav id="navbar" className='relative z-50 pt-10 pb-4 border-b border-b-gray-500/50 '>
             <Container className='grid grid-cols-2'>
                 <div>
-                    <img style={{ height: "24px", width: "151px" }} src={logo} alt="logo" />
+                    <NavLink className="inline" to="/">
+                        <img style={{ height: "24px", width: "151px" }} src={logo} alt="logo" />
+                    </NavLink>
                 </div>
 
                 <div className='flex justify-between items-center'>
                     <ul className='flex space-x-10 items-center text-sm'>
-                        <li>
+                        <li className='cursor-pointer'>
                             <NavLink to="#">
                                 Timeline
                             </NavLink>
@@ -32,13 +41,13 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <NavLink to="#">
+                            <NavLink to="/contact">
                                 Contact
                             </NavLink>
                         </li>
                     </ul>
 
-                    <Button>
+                    <Button onClick={handleRegisterClick}>
                         <span>
                             Register
                         </span>

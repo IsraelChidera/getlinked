@@ -6,7 +6,7 @@ type ButtonProps = {
 
 const index = ({className, children, onClick}: ButtonProps) => {
   return (
-    <button onClick={onClick} className={`${className} text-white text-xs bg-primary py-3 px-10`}>
+    <button onClick={onClick} className={`${className} text-white text-xs bg-primarya py-3 px-10`}>
         {children}
     </button>
   )

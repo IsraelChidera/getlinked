@@ -12,13 +12,33 @@ body {
   font-family: "Montserrat", Helvetica;
 }
 
-.bg-primary {
+.bg-primarya {
   background: linear-gradient(
-    180deg,
+    270deg,
     rgb(144, 58, 255) 0%,
     rgb(212, 52, 254) 56.42%,
     rgb(255, 37.9, 184.51) 99.99%,
     rgb(254, 52, 185.32) 100%
   );
   border-radius: 4px;
+}
+
+.congrats-dialog-box {
+  background: url("../src/assets/congrat-bg.png") fixed;
+  background-position: center;
+  background-repeat: repeat;
+  /* height: 100vh; */
+}
+
+#navbar a.active {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgb(144, 58, 255) 0%,
+    rgb(255, 37.9, 184.51) 100%
+  );
+  background-clip: text;
+  color: transparent;  
+  letter-spacing: 0;
 }

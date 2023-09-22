@@ -1,5 +1,4 @@
 
-import Container from '../elements/Container';
 import logo from '/logo.svg';
 import twitter from '../../assets/twitter.png';
 import linkedin from '../../assets/linkedin.png';
