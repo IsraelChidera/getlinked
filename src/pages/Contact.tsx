@@ -6,8 +6,57 @@ import instagram from '../assets/instagram.png';
 import Button from '../components/elements/Button';
 import lens from '../assets/contact-lens.png';
 import lens1 from '../assets/contact-lens-1.png';
+import { useEffect, useState } from 'react';
 
-const Contact = () => {
+const Contact = () => {  
+
+  const [formData, setFormData] = useState({
+    email: "",
+    phone_number: "",
+    first_name: "",
+    message: ""
+  })
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value })
+  }
+
+  type RequestOptionsProps = {
+    method: string,
+    headers: any,
+    body: any,
+    redirect: any
+  }
+
+  let obj = JSON.stringify({
+    "email": "sample@eexample.com",
+    "phone_number": "0903322445533",
+    "first_name": "Space Explore",
+    "message": "I need further info"
+  });
+
+  let requestOptions: RequestOptionsProps = {
+    method: 'POST',
+    headers: {
+      'Content-Type':
+        'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(formData),
+    redirect: 'follow'
+  };
+
+  const handleContactSubmit = async (e: any) => {
+    e.preventDefault();
+
+    await fetch("https://backend.getlinked.ai/hackathon/contact-form", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+
+
   return (
     <div className=' overflow-hidden relative'>
 
@@ -62,16 +111,23 @@ const Contact = () => {
               </div>
 
               <div>
-                <input style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='First Name' />
+                <input name="first_name" value={formData.first_name} onChange={handleInputChange} style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='First Name' />
               </div>
 
               <div>
-                <input style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='Mail' />
+                <input name="phone_number" value={formData.phone_number} onChange={handleInputChange} style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='Phone Number' />
+              </div>
+
+              <div>
+                <input name="email" value={formData.email} onChange={handleInputChange} style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='Mail' />
               </div>
 
               <div>
                 <textarea
-                  placeholder='ii'
+                  name="message" 
+                  value={formData.message} 
+                  onChange={handleInputChange}
+                  placeholder='Message'
                   style={{ background: "#d9d9d908", height: "150px", resize: "none" }}
                   className='w-full border-white border py-2 pl-6'
                 >
@@ -80,7 +136,7 @@ const Contact = () => {
               </div>
 
               <div className='flex items-center justify-center'>
-                <Button>
+                <Button onClick={(e: any) => handleContactSubmit(e)}>
                   <span>
                     Register
                   </span>

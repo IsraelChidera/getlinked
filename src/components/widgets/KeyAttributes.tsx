@@ -11,7 +11,7 @@ import dullStar from '../../assets/rules-star-1.png';
 
 const KeyAttributes = () => {
     return (
-        <div className='relative z-20'>
+        <section id="overview" className='relative z-20'>
             <img className='absolute -top-10 left-48' src={star} alt="star icon" />
             <Card>
                 <Container className='grid grid-cols-2 gap-x-4 '>
@@ -92,7 +92,7 @@ const KeyAttributes = () => {
 
             <img src={lens} alt="purple lens" className='absolute z-10 top-0 left-0' />
             <img src={lens2} alt="purple lens" className='absolute z-10 -bottom-96 right-0' />
-        </div>
+        </section>
     )
 }
 

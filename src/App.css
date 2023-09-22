@@ -39,6 +39,14 @@ body {
     rgb(255, 37.9, 184.51) 100%
   );
   background-clip: text;
-  color: transparent;  
+  color: transparent;
   letter-spacing: 0;
+  font-weight: 700;
+}
+
+.btn-link {
+  border: 2px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(154, 57, 255), rgb(255, 41, 185)) 1;
+  border-radius: 4px;
 }

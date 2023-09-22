@@ -13,7 +13,7 @@ import plus from '../../assets/plus-icon.png';
 
 const Faq = () => {
     return (
-        <div>
+        <section id="faq">
             <Card>
                 <Container className='grid grid-cols-2 gap-x-10'>
                     <div className='flex items-center justify-center relative'>
@@ -89,7 +89,7 @@ const Faq = () => {
                     </div>
                 </Container>
             </Card>
-        </div>
+        </section>
     )
 }
 

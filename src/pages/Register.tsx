@@ -6,11 +6,11 @@ import hero from '../assets/contact-img.png';
 import lens1 from '../assets/contact-lens-1.png';
 import congrats from '../assets/congrats.png';
 
-
 const Register = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);   
 
-    const handleRegistration = (e:any) => {
+
+    const handleRegistration = (e: any) => {
         e.preventDefault();
         setOpen(true);
     }
@@ -18,6 +18,7 @@ const Register = () => {
     const handleReturnToRegister = () => {
         setOpen(false);
     }
+
 
     return (
         <div className='py-10 overflow-hidden'>
@@ -106,6 +107,8 @@ const Register = () => {
                             </div>
 
                             <div className='flex items-center justify-center'>
+
+
                                 <Button className='w-full' onClick={handleRegistration}>
                                     <span>
                                         Register

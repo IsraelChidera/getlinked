@@ -1,16 +1,18 @@
 import logo from '/logo.svg';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink as NavL, useLocation, useNavigate } from 'react-router-dom';
 import Container from '../elements/Container';
 import Button from '../elements/Button';
-
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const Navbar = () => {
 
     const navigate = useNavigate();
+    let { pathname }: any = useLocation();    
 
     const handleRegisterClick = () => {
         navigate("/register")
     }
+
     return (
         <nav id="navbar" className='relative z-50 pt-10 pb-4 border-b border-b-gray-500/50 '>
             <Container className='grid grid-cols-2'>
@@ -23,35 +25,43 @@ const Navbar = () => {
                 <div className='flex justify-between items-center'>
                     <ul className='flex space-x-10 items-center text-sm'>
                         <li className='cursor-pointer'>
-                            <NavLink to="#">
+                            <NavLink to="/#timeline">
                                 Timeline
                             </NavLink>
                         </li>
 
                         <li>
-                            <NavLink to="#">
+                            <NavLink to="/#overview">
                                 Overview
                             </NavLink>
                         </li>
 
                         <li>
-                            <NavLink to="#">
+                            <NavLink to="/#faq">
                                 FAQs
                             </NavLink>
                         </li>
 
                         <li>
-                            <NavLink to="/contact">
+                            <NavL to="/contact">
                                 Contact
-                            </NavLink>
+                            </NavL>
                         </li>
                     </ul>
 
-                    <Button onClick={handleRegisterClick}>
-                        <span>
-                            Register
-                        </span>
-                    </Button>
+                    {
+                        pathname === '/register' ?
+                            <button className='btn-link text-xs py-3 px-10'>
+                                Register
+                            </button> :
+                            <Button onClick={handleRegisterClick}>
+                                <span>
+                                    Register
+                                </span>
+                            </Button>
+                    }
+
+
                 </div>
             </Container>
         </nav>

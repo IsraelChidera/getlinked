@@ -3,7 +3,7 @@ import Card from '../elements/Card';
 
 const Timeline = () => {
     return (
-        <div>
+        <section id="timeline">
             <Card>
                 <Container>
                     <div className='flex items-center justify-center'>
@@ -15,7 +15,7 @@ const Timeline = () => {
                     </div>
                 </Container>
             </Card>
-        </div>
+        </section>
     )
 }
 
