@@ -1,24 +1,139 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as yup from 'yup';
 import Button from '../components/elements/Button';
 import lens from '../assets/contact-lens.png';
 import hero from '../assets/contact-img.png';
 import lens1 from '../assets/contact-lens-1.png';
 import congrats from '../assets/congrats.png';
 
+
+type RequestOptionsProps = {
+    method: string,
+    headers: any,
+    redirect: any
+}
+
+
 const Register = () => {
-    const [open, setOpen] = useState(false);   
+    const [open, setOpen] = useState(false);
+    const [category, setCategory] = useState([]);
+    const [validationErrors, setValidationErrors] = useState([]);
+    const [errors, setErrors] = useState("");
+    const [formData, setFormData] = useState({
+        team_name: '',
+        phone_number: '',
+        email: '',
+        project_topic: '',
+        category: '',
+        group_size: '',
+        privacy_policy_accepted: false,
+    });
+    const [successMessage, setSuccessMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const validationSchema = yup.object().shape({
+        team_name: yup.string().required('Team Name is required'),
+        phone_number: yup.string().required('Phone Number is required'),
+        email: yup.string().email('Invalid email address').required('Email is required'),
+        project_topic: yup.string().required('Project Topic is required'),
+        category: yup.number().required('Category is required'),
+        group_size: yup.number().required('Group Size is required'),
+        privacy_policy_accepted: yup.boolean().oneOf([true], 'You must accept the privacy policy'),
+    });
 
-    const handleRegistration = (e: any) => {
-        e.preventDefault();
-        setOpen(true);
+    let requestOptions: RequestOptionsProps = {
+        method: 'GET',
+        headers: {
+            'Content-Type':
+                'application/json;charset=utf-8'
+        },
+        redirect: 'follow'
+    };
+
+    const fetchCategory = async () => {
+        await fetch("https://backend.getlinked.ai/hackathon/categories-list", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                setCategory(result)
+            }
+            )
+            .catch(error => console.log('error', error));
     }
+
+    useEffect(() => {
+        fetchCategory();
+    }, [])
+
 
     const handleReturnToRegister = () => {
         setOpen(false);
     }
 
+    const handleInputChange = (e: any) => {
+        const { name, value, type, checked } = e.target;
+        let newValue = type === 'checkbox' ? checked : value;
+
+        if (name === 'category') {
+            newValue = parseInt(value, 10);
+        }
+        setFormData({ ...formData, [name]: newValue });
+    };
+
+    const resetForm = () => {
+        setFormData({
+            team_name: '',
+            phone_number: '',
+            email: '',
+            project_topic: '',
+            category: '',
+            group_size: '',
+            privacy_policy_accepted: false,
+        });
+        setValidationErrors([]);
+    };
+
+    const handleFormSubmit = async (e: React.FormEvent) => {
+        console.log(formData);
+
+        e.preventDefault();
+
+        try {
+            await validationSchema.validate(formData, { abortEarly: false });
+
+            const response = await fetch('https://backend.getlinked.ai/hackathon/registration', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                },
+                body: JSON.stringify(formData),
+                redirect: 'follow',
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log(result);
+                setSuccessMessage('Registration successful! Check your email for next steps.');
+                setOpen(true);
+                setErrors("");
+                resetForm();
+            } else {
+                console.error('Registration failed. HTTP Status Code:', response);
+                setErrors("Registration failed. Invalid inputs");
+                const errorResponse = await response.json(); // Attempt to parse the error response from the server
+                if (errorResponse && errorResponse.message) {
+                    console.error('Error Message:', errorResponse.message);
+                    setErrors(errorResponse.message);
+                }
+            }
+        } catch (error: any) {
+            console.error('Error:', error);
+            console.error('Validation Error:', setValidationErrors(error.errors));
+        } finally {
+            setIsSubmitting(false);
+        }
+
+    };
 
     return (
         <div className='py-10 overflow-hidden'>
@@ -48,12 +163,33 @@ const Register = () => {
                             <h2 className='mt-4 font-semibold text-2xl'>CREATE YOUR ACCOUNT</h2>
                         </div>
 
-                        <form className='mt-10 space-y-8'>
+                        {
+                            validationErrors && <ul className='list-disc text-xs text-red-400'>
+                                {
+                                    validationErrors.map((item, index) => (
+                                        <li key={index}>{item}</li>
+                                    ))
+                                }
+                            </ul>
+                        }
+
+                        {
+                            errors && <p className=' mt-4 mb-4 text-xs text-red-400'>
+                                {errors}
+                            </p>
+                        }
+
+                        <form className='mt-10 space-y-8' >
 
                             <div className='grid grid-cols-2 gap-x-4'>
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Team's Name</label>
-                                    <input style={{ background: "#d9d9d908" }} className='border-white border text-xs py-2 pl-4 w-full'
+                                    <input
+                                        style={{ background: "#d9d9d908" }}
+                                        name='team_name'
+                                        value={formData.team_name}
+                                        onChange={handleInputChange}
+                                        className='border-white border text-xs py-2 pl-4 w-full'
                                         type="text"
                                         placeholder='Enter the name of your group'
                                     />
@@ -61,7 +197,12 @@ const Register = () => {
 
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Phone</label>
-                                    <input style={{ background: "#d9d9d908" }} className='border-white border text-xs py-2 pl-4 w-full'
+                                    <input
+                                        style={{ background: "#d9d9d908" }}
+                                        name='phone_number'
+                                        value={formData.phone_number}
+                                        onChange={handleInputChange}
+                                        className='border-white border text-xs py-2 pl-4 w-full'
                                         type="text" placeholder='Enter your phone number' />
                                 </div>
                             </div>
@@ -69,7 +210,12 @@ const Register = () => {
                             <div className='grid grid-cols-2 gap-x-4'>
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Email</label>
-                                    <input style={{ background: "#d9d9d908" }} className='border-white border text-xs py-2 pl-4 w-full'
+                                    <input
+                                        style={{ background: "#d9d9d908" }}
+                                        name='email'
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        className='border-white border text-xs py-2 pl-4 w-full'
                                         type="text"
                                         placeholder='Enter your email address'
                                     />
@@ -77,7 +223,12 @@ const Register = () => {
 
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Project Topic</label>
-                                    <input style={{ background: "#d9d9d908" }} className='border-white border text-xs py-2 pl-4 w-full'
+                                    <input
+                                        style={{ background: "#d9d9d908" }}
+                                        name='project_topic'
+                                        value={formData.project_topic}
+                                        onChange={handleInputChange}
+                                        className='border-white border text-xs py-2 pl-4 w-full'
                                         type="text" placeholder='What is your group project topic' />
                                 </div>
                             </div>
@@ -85,15 +236,36 @@ const Register = () => {
                             <div className='grid grid-cols-2 gap-x-4'>
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Category</label>
-                                    <select className='py-2 pl-4 w-full text-xs' style={{ background: "#d9d9d908" }}>
-                                        <option >Select your category</option>
+                                    <select
+                                        className='py-2 pl-4 w-full text-xs'
+                                        style={{ background: "#d9d9d908" }}
+                                        name='category'
+                                        value={formData.category}
+                                        onChange={handleInputChange}
+                                    >
+                                        <option className='bg-primary' >Select your category</option>
+                                        {
+                                            category.map((item: any) => (
+                                                <option value={item.id} className='bg-primary' key={item.id}> {item.name} </option>
+                                            ))
+                                        }
                                     </select>
                                 </div>
 
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Group Size</label>
-                                    <select className='py-2 pl-4 w-full text-xs' style={{ background: "#d9d9d908" }}>
-                                        <option >Select </option>
+                                    <select
+                                        className='py-2 pl-4 w-full text-xs'
+                                        style={{ background: "#d9d9d908" }}
+                                        name='group_size'
+                                        value={formData.group_size}
+                                        onChange={handleInputChange}
+                                    >
+                                        <option className='bg-primary' >Select </option>
+                                        <option className='bg-primary'>5</option>
+                                        <option className='bg-primary'>10</option>
+                                        <option className='bg-primary'>20</option>
+                                        <option className='bg-primary'>50</option>
                                     </select>
                                 </div>
                             </div>
@@ -101,19 +273,32 @@ const Register = () => {
                             <div>
                                 <p className='text-xs italic text-primary'>Please review your registration details before submitting</p>
                                 <div className='mt-2 flex items-center'>
-                                    <input type="checkbox" />
+                                    <input
+                                        type="checkbox"
+                                        name="privacy_policy_accepted"
+                                        checked={formData.privacy_policy_accepted}
+                                        onChange={handleInputChange}
+                                    />
                                     <label className='text-xs pl-2'>I agreed with the event terms and conditions and privacy policy</label>
                                 </div>
                             </div>
 
-                            <div className='flex items-center justify-center'>
+                            <div className='block items-center justify-center'>
 
 
-                                <Button className='w-full' onClick={handleRegistration}>
+                                <button
+                                    // type="submit"
+                                    onClick={(e: any) => handleFormSubmit(e)}
+                                    className='text-white w-full text-xs relative z-50 py-3 px-10'
+                                    style={{
+                                        background: "linear-gradient(270deg, rgb(144, 58, 255) 0%, rgb(212, 52, 254) 56.42%, rgb(255, 37.9, 184.51) 99.99%, rgb(254, 52, 185.32) 100%)",
+                                        borderRadius: "4px"
+                                    }}
+                                >
                                     <span>
                                         Register
                                     </span>
-                                </Button>
+                                </button>
                             </div>
 
                         </form>

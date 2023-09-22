@@ -6,56 +6,78 @@ import instagram from '../assets/instagram.png';
 import Button from '../components/elements/Button';
 import lens from '../assets/contact-lens.png';
 import lens1 from '../assets/contact-lens-1.png';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Formik, Field, Form } from 'formik';
 
-const Contact = () => {  
 
-  const [formData, setFormData] = useState({
+type InitialValuesProps = {
+  email: string,
+  phone_number: string,
+  first_name: string,
+  message: string
+}
+
+type ErrorsProps = {
+  email?: string,
+  phone_number?: string,
+  first_name?: string,
+  message?: string
+}
+
+const Contact = () => {
+
+  const [success, setSuccess] = useState("");
+  const initialValues: InitialValuesProps = {
     email: "",
     phone_number: "",
     first_name: "",
     message: ""
-  })
-
-  const handleInputChange = (e: any) => {
-    const { name, value } = e.target;
-
-    setFormData({ ...formData, [name]: value })
   }
 
-  type RequestOptionsProps = {
-    method: string,
-    headers: any,
-    body: any,
-    redirect: any
+  const validateForm = (values: InitialValuesProps) => {
+    const errors: ErrorsProps = {}
+
+    if (!values.first_name) {
+      errors.first_name = "First name is required";
+    } else if (values.first_name.length <= 3) {
+      errors.first_name = 'Must be 3 characters or more';
+    }
+
+    if (!values.phone_number) {
+      errors.phone_number = "Phone number is required";
+    } else if (!/^\d{11}$/.test(values.phone_number)) {
+      errors.phone_number = "Invalid phone number. Number must be 11 digits";
+    }
+
+    if (!values.email) {
+      errors.email = "Email is required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+    ) {
+      errors.email = "Invalid email address";
+    }
+
+    return errors;
   }
 
-  let obj = JSON.stringify({
-    "email": "sample@eexample.com",
-    "phone_number": "0903322445533",
-    "first_name": "Space Explore",
-    "message": "I need further info"
-  });
-
-  let requestOptions: RequestOptionsProps = {
-    method: 'POST',
-    headers: {
-      'Content-Type':
-        'application/json;charset=utf-8'
-    },
-    body: JSON.stringify(formData),
-    redirect: 'follow'
-  };
-
-  const handleContactSubmit = async (e: any) => {
-    e.preventDefault();
-
-    await fetch("https://backend.getlinked.ai/hackathon/contact-form", requestOptions)
+  const onContactFormSubmission = async (values: any) => {
+    console.log("Adad");
+    await fetch("https://backend.getlinked.ai/hackathon/contact-form", {
+      method: 'POST',
+      headers: {
+        'Content-Type':
+          'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(values),
+      redirect: 'follow'
+    })
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => {
+        setSuccess("Message submitted successfully");
+        console.log(result);
+      })
       .catch(error => console.log('error', error));
   }
-
 
   return (
     <div className=' overflow-hidden relative'>
@@ -104,51 +126,123 @@ const Contact = () => {
             className='relative z-50 rounded-md py-16 px-16'
             style={{ background: "#d9d9d908", border: "1px solid #d434fe", }}
           >
-            <form className='space-y-8'>
-              <div>
-                <p className='font-bold text-primary'> Questions or need assistance?</p>
-                <p className='font-bold text-primary'>Let us know about it</p>
-              </div>
+            <p className='pb-4 text-center text-sm'>{success}</p>
+            <Formik
+              initialValues={initialValues}
+              validate={validateForm}
+              onSubmit={(values, { resetForm }: { resetForm: any }) => {
+                onContactFormSubmission(values);
+                resetForm({ values: '' });
+              }}
+            >
+              {
+                (
+                  { values, errors, touched, handleChange, handleSubmit }:
+                    {
+                      values: any, errors: any,
+                      touched: any, handleChange: any, handleSubmit: any
+                    }
+                ) => (
+                  <>
+                    <Form className='space-y-8'>
+                      <div>
+                        <p className='font-bold text-primary'> Questions or need assistance?</p>
+                        <p className='font-bold text-primary'>Let us know about it</p>
+                      </div>
 
-              <div>
-                <input name="first_name" value={formData.first_name} onChange={handleInputChange} style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='First Name' />
-              </div>
+                      <div>
+                        <Field
+                          required
+                          type="text"
+                          name="first_name"
+                          value={values.first_name}
+                          placeholder="First Name"
+                          style={{ background: "#d9d9d908" }}
+                          className='border-white border text-sm py-2 pl-6 w-full'
+                          onChange={handleChange}
+                        />
+                        <p className='text-xs text-red-700'>
+                          {errors.first_name && touched.first_name && errors.first_name}
+                        </p>
+                      </div>
 
-              <div>
-                <input name="phone_number" value={formData.phone_number} onChange={handleInputChange} style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='Phone Number' />
-              </div>
+                      <div>
+                        <Field
+                          required
+                          type="text"
+                          name="phone_number"
+                          value={values.phone_number}
+                          placeholder="Phone Number"
+                          style={{ background: "#d9d9d908" }}
+                          className='border-white border text-sm py-2 pl-6 w-full'
+                          onChange={handleChange}
+                        />
+                        <p className='text-xs text-red-700'>
+                          {errors.phone_number && touched.phone_number && errors.phone_number}
+                        </p>
+                      </div>
 
-              <div>
-                <input name="email" value={formData.email} onChange={handleInputChange} style={{ background: "#d9d9d908" }} className='border-white border text-sm py-2 pl-6 w-full' type="text" placeholder='Mail' />
-              </div>
+                      <div>
+                        <Field
+                          required
+                          type="email"
+                          name="email"
+                          value={values.email}
+                          placeholder="Email"
+                          style={{ background: "#d9d9d908" }}
+                          className='border-white border text-sm py-2 pl-6 w-full'
+                          onChange={handleChange}
+                        />
 
-              <div>
-                <textarea
-                  name="message" 
-                  value={formData.message} 
-                  onChange={handleInputChange}
-                  placeholder='Message'
-                  style={{ background: "#d9d9d908", height: "150px", resize: "none" }}
-                  className='w-full border-white border py-2 pl-6'
-                >
+                        <p className='text-xs text-red-700'>
+                          {errors.email && touched.email && errors.email}
+                        </p>
+                      </div>
 
-                </textarea>
-              </div>
+                      <div>
+                        <textarea
+                          name="message"
+                          value={values.message}
+                          placeholder='Message'
+                          style={{ background: "#d9d9d908", height: "150px", resize: "none" }}
+                          className='w-full border-white border py-2 pl-6'
+                          onChange={handleChange}
+                          required
+                        ></textarea>
 
-              <div className='flex items-center justify-center'>
-                <Button onClick={(e: any) => handleContactSubmit(e)}>
-                  <span>
-                    Register
-                  </span>
-                </Button>
-              </div>
+                        <p className='text-xs text-red-700'>
+                          {errors.message && touched.message && errors.message}
+                        </p>
+                      </div>
 
-            </form>
+                      <div className='flex  items-center justify-center'>
+                        <button
+                          type="submit"
+                          className='text-white text-xs relative z-50 py-3 px-10'
+                          style={{
+                            background: "linear-gradient(270deg, rgb(144, 58, 255) 0%, rgb(212, 52, 254) 56.42%, rgb(255, 37.9, 184.51) 99.99%, rgb(254, 52, 185.32) 100%)",
+                            borderRadius: "4px"
+                          }}
+                        >
+                          <span>
+                            Submit
+                          </span>
+                        </button>
+                      </div>
+
+                    </Form>
+                  </>
+                )
+              }
+            </Formik>
+
+
+
           </div>
         </main>
-      </div>
+      </div >
 
-    </div>
+    </div >
   )
 }
 

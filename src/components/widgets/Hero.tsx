@@ -10,6 +10,7 @@ import chain from '../../assets/chain.svg';
 import fire from '../../assets/fire.svg';
 import bulb from '../../assets/bulb.svg';
 
+
 const Hero = () => {
     return (
         <header className='relative pt-10 border-b border-b-gray-500/50 '>
