@@ -19,6 +19,7 @@ type RequestOptionsProps = {
 const Register = () => {
     const [open, setOpen] = useState(false);
     const [category, setCategory] = useState([]);
+    const [submitting, setSubmitting] = useState(false);
     const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState("");
     const [formData, setFormData] = useState({
@@ -95,6 +96,7 @@ const Register = () => {
     };
 
     const handleFormSubmit = async (e: React.FormEvent) => {
+        setSubmitting(true);
         console.log(formData);
 
         e.preventDefault();
@@ -117,6 +119,7 @@ const Register = () => {
                 setOpen(true);
                 setErrors("");
                 resetForm();
+                setSubmitting(false);
             } else {
                 console.error('Registration failed. HTTP Status Code:', response);
                 setErrors("Registration failed. Invalid inputs");
@@ -124,11 +127,14 @@ const Register = () => {
                 if (errorResponse && errorResponse.message) {
                     console.error('Error Message:', errorResponse.message);
                     setErrors(errorResponse.message);
+                    setSubmitting(false);
                 }
+                setSubmitting(false);
             }
         } catch (error: any) {
             console.error('Error:', error);
             console.error('Validation Error:', setValidationErrors(error.errors));
+            setSubmitting(false);
         } finally {
         }
 
@@ -297,7 +303,7 @@ const Register = () => {
                                     }}
                                 >
                                     <span>
-                                        Register
+                                        {submitting? "Submitting":  "Register"}
                                     </span>
                                 </button>
                             </div>
@@ -308,7 +314,7 @@ const Register = () => {
             </div>
 
             {
-                open && <section className='h-screen mb-2 fixed w-full md:z-50 top-0 left-0 flex items-center  justify-center congrats-dialog-box'>
+                open && <section className='h-screen mb-2 fixed w-full md:p-0 p-4 z-50 top-0 left-0 flex items-center  justify-center congrats-dialog-box'>
                     <div className='space-y-6 py-20'>
                         <img src={congrats} alt="congrats pop up" />
 

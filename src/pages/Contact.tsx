@@ -26,6 +26,8 @@ type ErrorsProps = {
 const Contact = () => {
 
   const [success, setSuccess] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
   const initialValues: InitialValuesProps = {
     email: "",
     phone_number: "",
@@ -60,7 +62,7 @@ const Contact = () => {
   }
 
   const onContactFormSubmission = async (values: any) => {
-    console.log("Adad");
+    setSubmitting(true);
     await fetch("https://backend.getlinked.ai/hackathon/contact-form", {
       method: 'POST',
       headers: {
@@ -74,12 +76,13 @@ const Contact = () => {
       .then(result => {
         setSuccess("Message submitted successfully");
         console.log(result);
+        setSubmitting(false);
       })
-      .catch(error => console.log('error', error));
+      .catch(error => {console.log('error', error); setSubmitting(true);});
   }
 
   return (
-    <div className=' overflow-hidden relative'>
+    <div className=' overflow-hidden relative z-10'>
 
       <img src={lens} alt="lens" className='absolute top-0 left-0' />
       <img src={lens1} alt="lens" className='absolute bottom-0 right-0' />
@@ -223,7 +226,9 @@ const Contact = () => {
                           }}
                         >
                           <span>
-                            Submit
+                            {
+                              submitting ? "Submitting" : "Submit"
+                            }                            
                           </span>
                         </button>
                       </div>
