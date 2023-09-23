@@ -4,7 +4,6 @@ import line3 from '../../assets/line-3.png';
 import line4 from '../../assets/line-4.png';
 import ball from '../../assets/ball.png';
 import lineMobile from '../../assets/line-mobile.png';
-import ballMobile from '../../assets/ball-mobile.png';
 
 const Timeline = () => {
     return (
