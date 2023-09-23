@@ -17,27 +17,27 @@ const Privacy = () => {
                 <Container className='md:grid p-4 md:p-0 grid-cols-2 gap-x-2 py-24'>
                     <div className='flex items-center justify-center relative'>
                         <div className='relative z-20'>
-                            <h2 className='text-4xl relative font-bold'>
+                            <h2 className='text-2xl text-center md:text-left md:text-4xl relative font-bold'>
                                 <span>
                                     Privacy Policy and
-                                </span> <br />
+                                </span> <br  />
                                 <span className='text-primary'>
                                     Terms
                                 </span>
                             </h2>
 
-                            <p className='text-xs mt-2'>
+                            <p className='text-center md:text-left text-xs mt-2'>
                                 Last updated on September 12, 2023
                             </p>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p className='text-center md:text-left text-sm mt-6 leading-7'>
                                 Below are our privacy & policy, which outline a lot of goodies.
                                 it's our aim to always take of our participant
                             </p>
 
                             <div className='mt-10'>
                                 <div
-                                    className='relative md:z-50 rounded-md py-16 px-16'
+                                    className='relative md:z-50 rounded-md py-16 px-4 md:px-16'
                                     style={{ background: "#d9d9d908", border: "1px solid #d434fe", }}
                                 >
                                     <p className='text-sm'>
@@ -84,7 +84,7 @@ const Privacy = () => {
 
                     </div>
 
-                    <div className='flex  items-center relative justify-center'>
+                    <div className='flex mt-6 md:mt-0  items-center relative justify-center'>
                         <div>
                             <img src={lock} alt="icon" className='relative z-40' />
                             <img src={lockSign} alt="lock sign" className='absolute z-10 top-0 md:left-20' />

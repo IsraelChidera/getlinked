@@ -8,6 +8,7 @@ import call from '../../assets/call.png';
 import location from '../../assets/location.png';
 import whiteStar from '../../assets/star.png';
 import brightStar from '../../assets/star2.png';
+import logofooter from '../../assets/logofooter.png';
 import dullStar from '../../assets/rules-star-1.png';
 
 const Footer = () => {
@@ -16,18 +17,19 @@ const Footer = () => {
             <img src={whiteStar} alt="star" className='absolute top-10 left-6' />
             <div className='relative mx-auto md:w-10/12 py-20'>
 
-                <div className='grid space-y-6 md:space-y-0 md:p-0 p-4 md:grid-cols-4 gap-x-4'>
+                <div className='md:grid space-y-6 md:space-y-0 md:p-0 p-4 md:grid-cols-4 gap-x-4'>
                     <div className='relative flex col-span-2 flex-col justify-between'>
                         <div>
-                            <img src={logo} alt="logo" />
-                            <p className='text-xs'>
+                            <img src={logo} alt="logo"  className='md:block hidden '/>
+                            <img src={logofooter} alt="logo" className='md:hidden block' />
+                            <p className='text-xs mt-3 md:mt-0'>
                                 Getlinked Tech Hackathon is a technology innovation program
                                 established by a group of organizations with the aim of showcasing
                                 young and talented individuals in the field of technology
                             </p>
                         </div>
 
-                        <div className='flex text-xs items-center space-x-4 '>
+                        <div className='flex mt-10 md:mt-0 text-xs items-center space-x-4 '>
                             <p className='border-r border-primary pr-2'>Terms of Use</p>
                             <p className='pl-2'>Privacy Policy</p>
                         </div>
@@ -71,7 +73,7 @@ const Footer = () => {
                         <img src={dullStar} alt="star" className='absolute top-0 right-0' />
                     </div>
 
-                    <div className='relative'>
+                    <div className='relative pt-10 md:pt-0 '>
                         <img src={whiteStar} alt="star" className='absolute bottom-0 right-0' />
 
                         <ul className='space-y-4'>

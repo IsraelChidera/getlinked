@@ -14,7 +14,8 @@ const Navbar = () => {
     let { pathname }: any = useLocation();
 
     const handleRegisterClick = () => {
-        navigate("/register")
+        navigate("/register");
+        setShow(false);
     }
 
     const showMenu = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav id="navbar" className='relative z-10 md:z-50 pt-10 px-4 md:px-0 pb-4 border-b border-b-gray-500/50 '>
+        <nav id="navbar" className='relative z-50 pt-10 px-4 md:px-0 pb-4 border-b border-b-gray-500/50 '>
             <Container className='flex justify-between md:grid grid-cols-2'>
                 <div>
                     <NavLink className="inline" to="/">
@@ -78,7 +79,7 @@ const Navbar = () => {
 
                 {
                     show &&
-                    <div style={{ background: "#150E28", height: "100vh" }} className=' p-10 absolute md:z-50 top-0 left-0 w-full'>
+                    <div style={{ background: "#150E28", height: "100vh" }} className=' p-10 fixed md:z-50 top-0 left-0 w-full'>
                         <div className='flex justify-end mt-10'>
                             <img className='rounded-full p-2 border border-primary' src={cancel} alt="cancel icon" onClick={() => setShow(false)} />
                         </div>
@@ -86,32 +87,32 @@ const Navbar = () => {
                         <div>
                             <ul className='flex flex-col pb-6 space-y-6 text-sm'>
                                 <li className='cursor-pointer'>
-                                    <NavLink to="/#timeline">
+                                    <NavLink to="/#timeline" onClick={() => setShow(false)}>
                                         Timeline
                                     </NavLink>
                                 </li>
 
                                 <li>
-                                    <NavLink to="/#overview">
+                                    <NavLink to="/#overview" onClick={() => setShow(false)}>
                                         Overview
                                     </NavLink>
                                 </li>
 
                                 <li>
-                                    <NavLink to="/#faq">
+                                    <NavLink to="/#faq" onClick={() => setShow(false)}>
                                         FAQs
                                     </NavLink>
                                 </li>
 
                                 <li>
-                                    <NavL to="/contact">
+                                    <NavL to="/contact" onClick={() => setShow(false)}>
                                         Contact
                                     </NavL>
                                 </li>
                             </ul>
                             {
                                 pathname === '/register' ?
-                                    <button className='btn-link text-xs py-3 px-10'>
+                                    <button className='btn-link text-xs py-3 px-10' onClick={() => setShow(false)}>
                                         Register
                                     </button> :
                                     <Button onClick={handleRegisterClick}>

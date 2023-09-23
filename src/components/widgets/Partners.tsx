@@ -13,6 +13,7 @@ import star2 from '../../assets/rules-star-2.png';
 import line1 from '../../assets/line-1.png';
 import line2 from '../../assets/line-2.png';
 import brightStar from '../../assets/attributes-star.png';
+import partners from '../../assets/partners.png';
 
 const Partners = () => {
     return (
@@ -20,11 +21,11 @@ const Partners = () => {
             <img src={lens} alt="purple lens" className='z-10 absolute top-0 left-0' />
             <img src={lens2} alt="purple lens" className='z-10 absolute bottom-0 right-0' />
             <img className='absolute -top-10 left-20' src={brightStar} alt="star icon" />
-            <Card>
+            <Card className='py-6'>
                 <Container>
                     <div className='flex items-center justify-center'>
                         <div>
-                            <h1 className='text-4xl font-bold text-center'>Partners and Sponsors</h1>
+                            <h1 className='text-2xl md:text-4xl font-bold text-center'>Partners and Sponsors</h1>
                             <div className='flex items-center justify-center'>
                                 <p className="text-sm w-80 text-center leading-6 mt-2">
                                     Getlinked Hackathon 1.0 is honored to have the following major
@@ -34,9 +35,9 @@ const Partners = () => {
                         </div>
                     </div>
 
-                    <div className='relative md:z-50 p-10 mt-10'>
+                    <div className='relative z-40 md:z-50 p-10 mt-10'>
                         <img className='absolute md:z-50 inset-x-1/2 bottom-0' src={star2} alt="star icon" />
-                        <div className='grid grid-cols-3 gap-y-10'>
+                        <div className='hidden md:grid grid-cols-3 gap-y-10'>
                             <div className='relative flex items-center justify-center'>
                                 <img src={product1} className="" alt="logo that support" />
                                 <img src={line1} className="absolute right-0 top-0 " alt="logo that support" />
@@ -48,7 +49,7 @@ const Partners = () => {
                             </div>
 
                             <div className='flex items-center justify-center'>
-                                <img src={product3}  className="" alt="logo that support" />
+                                <img src={product3} className="" alt="logo that support" />
                             </div>
 
                             <div >
@@ -75,6 +76,12 @@ const Partners = () => {
 
                             <div className='flex items-center justify-center'>
                                 <img src={product6} className="" alt="logo that support" />
+                            </div>
+                        </div>
+
+                        <div className='flex items-center justify-center'>
+                            <div>
+                                <img src={partners} alt="partners" />
                             </div>
                         </div>
                     </div>

@@ -8,7 +8,7 @@ import lens from '../../assets/rules-lens.png';
 const Rules = () => {
     return (
         <Card>
-            <Container className='md:grid grid-cols-2 gap-x-4'>
+            <Container className='md:grid px-4 md:px-0 grid-cols-2 gap-x-4'>
                 <div className='md:hidden block'>
                     <div className='relative'>
 
@@ -29,7 +29,7 @@ const Rules = () => {
                             <img className='absolute top-0 right-40' src={star1} alt="star icon" />
                         </h2>
 
-                        <p className='text-xs  md:text-sm mt-6 leading-7 '>
+                        <p className='text-xs md:text-left text-center md:text-sm mt-6 leading-7 '>
                             Our tech hackathon is a melting pot of visionaries, and its purpose is as
                             clear as day: to shape the future. Whether you're a coding genius, a
                             design maverick, or a concept wizard, you'll have the chance to transform

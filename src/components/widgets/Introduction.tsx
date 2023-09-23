@@ -11,7 +11,7 @@ const Introduction = () => {
             <Container className='md:grid grid-cols-2'>
                 <div className='relative'>
                     <img className='absolute top-10 left-0' src={star2} alt="star icon" />
-                    <img className=' mx-auto w-10/12 ' src={heroImg} alt="info globe" />
+                    <img className='px-10 md:px-0 mx-auto w-10/12 ' src={heroImg} alt="info globe" />
                     <img className='absolute bottom-0 right-0' src={arrow} alt="arrow icon" />
                 </div>
 

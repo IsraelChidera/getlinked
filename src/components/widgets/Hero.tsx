@@ -59,7 +59,7 @@ const Hero = () => {
                             </Button>
                         </div>
 
-                        <div className='md:mt-20 mt-6 mb-10 md:mb-0 flex space-x-6'>
+                        <div className='md:mt-20 mt-6 mb-10 md:mb-0 flex justify-center md:justify-start space-x-6'>
                             <p>
                                 <span className='text-2xl md:text-5xl'>00</span>
                                 <span className='text-xs'>H</span>
@@ -79,7 +79,7 @@ const Hero = () => {
                 </div>
 
                 <div className='relative'>
-                    <img className='z-10 relative' src={heroImg} alt="hero image" />
+                    <img className='z-10 relative md:w-fit md:h-fit imageHero' src={heroImg} alt="hero image" />
                     <img className='z-20 absolute -top-10 left-0' src={bubbles} alt="bubbles" />
                 </div>
             </div>

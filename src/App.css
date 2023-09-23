@@ -63,3 +63,8 @@ body {
   background: #d9d9d908;
   border: 1px solid #d434fe;
 }
+
+.imageHero {
+  height: 362px;
+  width: 420px;
+}
