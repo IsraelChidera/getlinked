@@ -37,7 +37,7 @@ const Privacy = () => {
 
                             <div className='mt-10'>
                                 <div
-                                    className='relative z-50 rounded-md py-16 px-16'
+                                    className='relative md:z-50 rounded-md py-16 px-16'
                                     style={{ background: "#d9d9d908", border: "1px solid #d434fe", }}
                                 >
                                     <p className='text-sm'>

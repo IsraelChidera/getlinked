@@ -58,3 +58,8 @@ body {
     1;
   border-radius: 4px;
 }
+
+.authBg {
+  background: #d9d9d908;
+  border: 1px solid #d434fe;
+}

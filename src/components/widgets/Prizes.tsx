@@ -37,8 +37,8 @@ const Prizes = () => {
 
                         <div className='hidden md:flex mt-40 justify-between space-x-6'>
                             <div className='relative pt-20'>
-                                <img className='absolute z-50 bottom-0 right-0' src={star2} alt="star icon" />
-                                <img className='absolute z-50 top-0 right-0' src={star2} alt="star icon" />
+                                <img className='absolute md:z-50 bottom-0 right-0' src={star2} alt="star icon" />
+                                <img className='absolute md:z-50 top-0 right-0' src={star2} alt="star icon" />
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
                                     <img className='relative -top-20' src={silver} alt="silver medal image" />
 

@@ -84,8 +84,8 @@ const Contact = () => {
       <img src={lens} alt="lens" className='absolute top-0 left-0' />
       <img src={lens1} alt="lens" className='absolute bottom-0 right-0' />
       <div className='mt-10'>
-        <main className="mx-auto py-10 md:w-10/12 grid grid-cols-2">
-          <div className='flex relative z-50  items-center'>
+        <main className="mx-auto py-10 md:w-10/12 md:grid grid-cols-2">
+          <div className='hidden md:flex relative md:z-50  items-center'>
             <section className="space-y-6">
               <h2 className="font-bold text-xl text-primary ">Get in touch </h2>
 
@@ -122,8 +122,7 @@ const Contact = () => {
           </div>
 
           <div
-            className='relative z-50 rounded-md py-16 px-16'
-            style={{ background: "#d9d9d908", border: "1px solid #d434fe", }}
+            className='relative z-50 rounded-md md:py-16 px-4 md:px-16 md:authBg'
           >
             <p className='pb-4 text-center text-sm'>{success}</p>
             <Formik
@@ -136,7 +135,7 @@ const Contact = () => {
             >
               {
                 (
-                  { values, errors, touched, handleChange,  }:
+                  { values, errors, touched, handleChange, }:
                     {
                       values: any, errors: any,
                       touched: any, handleChange: any,
@@ -217,7 +216,7 @@ const Contact = () => {
                       <div className='flex  items-center justify-center'>
                         <button
                           type="submit"
-                          className='text-white text-xs relative z-50 py-3 px-10'
+                          className='text-white text-xs relative md:z-50 py-3 px-10'
                           style={{
                             background: "linear-gradient(270deg, rgb(144, 58, 255) 0%, rgb(212, 52, 254) 56.42%, rgb(255, 37.9, 184.51) 99.99%, rgb(254, 52, 185.32) 100%)",
                             borderRadius: "4px"
@@ -236,6 +235,17 @@ const Contact = () => {
             </Formik>
 
 
+            <div className='md:hidden mt-10 flex justify-center items-center'>
+              <div>
+                <p className="text-sm text-primary text-center font-bold"> Share on </p>
+                <div className='flex mt-2 items-center space-x-3'>
+                  <img src={instagram} alt="instagram icon" className='w-3' />
+                  <img src={twitter} alt="twitter icon" className='w-3' />
+                  <img src={facebook} alt="facebook icon" className='w-3' />
+                  <img src={linkedin} alt="linkedin icon" className='w-3' />
+                </div>
+              </div>
+            </div>
 
           </div>
         </main>

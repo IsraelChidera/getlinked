@@ -18,7 +18,7 @@ const KeyAttributes = () => {
                     <div className='relative z-40 flex items-center justify-center'>
                         <img src={dullStar} alt="dull star" className='absolute'/>
                         <div>
-                            <img src={attributeImg} alt="info globe" className='relative z-50' />
+                            <img src={attributeImg} alt="info globe" className='relative md:z-50' />
                             <img className='absolute z-20 top-20 left-24' src={circle} alt="filled circle icon" />
                         </div>
 

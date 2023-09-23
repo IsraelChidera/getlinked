@@ -22,7 +22,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav id="navbar" className='relative z-10 md:z-50 pt-10 pb-4 border-b border-b-gray-500/50 '>
+        <nav id="navbar" className='relative z-10 md:z-50 pt-10 px-4 md:px-0 pb-4 border-b border-b-gray-500/50 '>
             <Container className='flex justify-between md:grid grid-cols-2'>
                 <div>
                     <NavLink className="inline" to="/">
@@ -78,7 +78,7 @@ const Navbar = () => {
 
                 {
                     show &&
-                    <div style={{ background: "#150E28", height: "100vh" }} className=' p-10 absolute z-50 top-0 left-0 w-full'>
+                    <div style={{ background: "#150E28", height: "100vh" }} className=' p-10 absolute md:z-50 top-0 left-0 w-full'>
                         <div className='flex justify-end mt-10'>
                             <img className='rounded-full p-2 border border-primary' src={cancel} alt="cancel icon" onClick={() => setShow(false)} />
                         </div>

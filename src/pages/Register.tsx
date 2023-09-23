@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import Button from '../components/elements/Button';
 import lens from '../assets/contact-lens.png';
 import hero from '../assets/contact-img.png';
+import register from '../assets/registerImg.png';
 import lens1 from '../assets/contact-lens-1.png';
 import congrats from '../assets/congrats.png';
 
@@ -112,7 +113,7 @@ const Register = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                console.log(result);                
+                console.log(result);
                 setOpen(true);
                 setErrors("");
                 resetForm();
@@ -128,30 +129,32 @@ const Register = () => {
         } catch (error: any) {
             console.error('Error:', error);
             console.error('Validation Error:', setValidationErrors(error.errors));
-        } finally {            
+        } finally {
         }
 
     };
 
     return (
-        <div className='py-10 overflow-hidden'>
+        <div className='py-10 md:px-0 px-3 overflow-hidden'>
 
             <img src={lens} alt="lens" className='absolute top-0 left-0' />
             <img src={lens1} alt="lens" className='absolute bottom-0 right-0' />
 
+            <h1 className='text-2xl md:hidden block font-bold text-primary mb-6'>Register</h1>
             <div className='relative z-20'>
-                <main className="mx-auto py-10 md:w-11/12 grid grid-cols-2">
-                    <div className='flex relative z-50  items-center'>
+                <main className="mx-auto py-10 md:w-11/12 md:grid grid-cols-2">
+                    <div className='flex relative md:z-40 z-0 justify-center items-center'>
                         <div>
-                            <img src={hero} alt="hero img" />
+
+                            <img src={hero} alt="hero img" className='md:block hidden' />
+                            <img src={register} alt="hero image" className="md:hidden " />
                         </div>
                     </div>
 
                     <div
-                        className='relative z-50 rounded-md py-16 px-16'
-                        style={{ background: "#d9d9d908", border: "1px solid #d434fe", }}
+                        className='relative md:z-40 rounded-md py-16 px-3 md:px-16 md:authBg'                        
                     >
-                        <h1 className='text-2xl font-bold text-primary mb-6'>Register</h1>
+                        <h1 className='text-2xl md:block hidden font-bold text-primary mb-6'>Register</h1>
 
                         <div>
                             <div>
@@ -179,7 +182,7 @@ const Register = () => {
 
                         <form className='mt-10 space-y-8' >
 
-                            <div className='grid grid-cols-2 gap-x-4'>
+                            <div className='md:grid grid-cols-2 md:space-y-0 space-y-8 md:gap-x-4'>
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Team's Name</label>
                                     <input
@@ -205,7 +208,7 @@ const Register = () => {
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-2 gap-x-4'>
+                            <div className='md:grid grid-cols-2 md:space-y-0 space-y-8 md:gap-x-4'>
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Email</label>
                                     <input
@@ -231,7 +234,7 @@ const Register = () => {
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-2 gap-x-4'>
+                            <div className='md:grid grid-cols-2 md:space-y-0 space-y-8 md:gap-x-4'>
                                 <div>
                                     <label className='block text-xs mb-1 font-semibold'>Category</label>
                                     <select
@@ -287,7 +290,7 @@ const Register = () => {
                                 <button
                                     // type="submit"
                                     onClick={(e: any) => handleFormSubmit(e)}
-                                    className='text-white w-full text-xs relative z-50 py-3 px-10'
+                                    className='text-white w-full text-xs relative md:z-50 py-3 px-10'
                                     style={{
                                         background: "linear-gradient(270deg, rgb(144, 58, 255) 0%, rgb(212, 52, 254) 56.42%, rgb(255, 37.9, 184.51) 99.99%, rgb(254, 52, 185.32) 100%)",
                                         borderRadius: "4px"
@@ -305,7 +308,7 @@ const Register = () => {
             </div>
 
             {
-                open && <section className='h-screen mb-2 fixed w-full z-50 top-0 left-0 flex items-center  justify-center congrats-dialog-box'>
+                open && <section className='h-screen mb-2 fixed w-full md:z-50 top-0 left-0 flex items-center  justify-center congrats-dialog-box'>
                     <div className='space-y-6 py-20'>
                         <img src={congrats} alt="congrats pop up" />
 

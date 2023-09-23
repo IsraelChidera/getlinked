@@ -34,8 +34,8 @@ const Partners = () => {
                         </div>
                     </div>
 
-                    <div className='relative z-50 p-10 mt-10'>
-                        <img className='absolute z-50 inset-x-1/2 bottom-0' src={star2} alt="star icon" />
+                    <div className='relative md:z-50 p-10 mt-10'>
+                        <img className='absolute md:z-50 inset-x-1/2 bottom-0' src={star2} alt="star icon" />
                         <div className='grid grid-cols-3 gap-y-10'>
                             <div className='relative flex items-center justify-center'>
                                 <img src={product1} className="" alt="logo that support" />

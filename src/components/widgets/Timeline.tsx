@@ -28,8 +28,8 @@ const Timeline = () => {
                             </div>
 
                             <div className='col-span-1 flex relative justify-center items-center'>
-                                <img className=' z-20' src={ball} alt="ball" />
-                                <p className='abs z-50 text-3xl '>1</p>
+                                <img className=' md:z-20' src={ball} alt="ball" />
+                                <p className='abs md:z-50 text-3xl '>1</p>
                                 <img src={line3} alt="line" className='abs -top-16' />
                             </div>
 
@@ -58,8 +58,8 @@ const Timeline = () => {
                             </div>
 
                             <div className='col-span-1 flex relative justify-center items-center'>
-                                <img className=' z-20' src={ball} alt="ball" />
-                                <p className='abs z-50 text-3xl '>2</p>
+                                <img className=' md:z-20' src={ball} alt="ball" />
+                                <p className='abs md:z-50 text-3xl '>2</p>
                             </div>
 
                             <div className='col-span-2 text-left'>
@@ -92,8 +92,8 @@ const Timeline = () => {
                             </div>
 
                             <div className='col-span-1 flex relative justify-center items-center'>
-                                <img className=' z-20' src={ball} alt="ball" />
-                                <p className='abs z-50 text-3xl '>3</p>
+                                <img className=' md:z-20' src={ball} alt="ball" />
+                                <p className='abs md:z-50 text-3xl '>3</p>
                                 <img src={line3} alt="line" className='abs -top-16' />
                             </div>
 
@@ -122,8 +122,8 @@ const Timeline = () => {
                             </div>
 
                             <div className='col-span-1 flex relative justify-center items-center'>
-                                <img className=' z-20' src={ball} alt="ball" />
-                                <p className='abs z-50 text-3xl '>4</p>
+                                <img className=' md:z-20' src={ball} alt="ball" />
+                                <p className='abs md:z-50 text-3xl '>4</p>
                             </div>
 
                             <div className='col-span-2 text-left'>
@@ -186,8 +186,8 @@ const Timeline = () => {
                             </div>
 
                             <div className='col-span-1 flex relative justify-center items-center'>
-                                <img className=' z-20' src={ball} alt="ball" />
-                                <p className='abs z-50 text-3xl '>6</p>
+                                <img className=' md:z-20' src={ball} alt="ball" />
+                                <p className='abs md:z-50 text-3xl '>6</p>
                             </div>
 
                             <div className='col-span-2 text-left'>
