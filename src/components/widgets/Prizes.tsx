@@ -47,7 +47,7 @@ const Prizes = () => {
                             </div>
                         </div>
 
-                        <div className='flex px-6 md:px-0 mt-40 justify-between space-x-2 md:space-x-6'>
+                        <div className='flex px-6 md:px-0 mt-4 md:mt-40 justify-between space-x-2 md:space-x-6'>
                             <div className='relative pt-20'>
                                 <img className='absolute md:z-50 bottom-0 right-0' src={star2} alt="star icon" />
                                 <img className='absolute md:z-50 top-0 right-0' src={star2} alt="star icon" />
