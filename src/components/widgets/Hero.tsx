@@ -18,54 +18,60 @@ const Hero = () => {
 
             <div className='flex justify-end pr-10'>
                 <div className='relative'>
-                    <p>
+                    <p className='md:text-base text-sm'>
                         Igniting a Revolution in HR Innovation
                     </p>
                     <img className='absolute -bottom-5 right-5' src={line} alt="line icon" />
                 </div>
             </div>
 
-            <div className='grid grid-cols-2 pt-20'>
+            <div className='md:grid grid-cols-2 pt-20'>
 
                 <div className='flex justify-center items-center relative'>
                     <img src={star} alt="star" className='absolute -top-4 left-20' />
-                    <div className='relative z-50'>
+                    <div className='relative md:z-50 '>
                         <div>
-                            <h1 className='text-6xl font-bold relative'>
+                            <h1 className='text-center md:text-left text-2xl md:text-6xl font-bold md:relative'>
                                 <span>getlinked Tech</span>
-                                <img className=' absolute -top-14 right-28 ' src={bulb} alt="chain" />
+                                <img className=' absolute md:-top-14 -top-6 md:right-28 right-20 md:w-12 w-6 ' src={bulb} alt="chain" />
                             </h1>
-                            <div className='text-6xl font-bold flex space-x-2 items-center'>
+                            <div className='text-2xl md:text-6xl font-bold flex space-x-2 items-center'>
                                 <h1>
                                     Hackathon <span className='text-primary'> 1.0 </span>
                                 </h1>
-                                <img className='w-10 h-15' src={chain} alt="chain" />
+                                <img className='md:w-10 w-5 md:h-15 h-10' src={chain} alt="chain" />
                                 <img className='w-10 h-15' src={fire} alt="fire spark" />
                             </div>
                         </div>
 
-                        <p className='text-sm mt-4'>
+                        <p className='md:text-sm text-xs text-center md:text-left mt-4'>
                             Participate in getlinked tech Hackathon 2023 stand <br />
                             a chance to win a Big prize
                         </p>
 
-                        <Button className='mt-6'>
+                        <Button className='mt-6 md:block hidden'>
                             Register
                         </Button>
 
-                        <div className='mt-20 flex space-x-6'>
+                        <div className='md:hidden flex justify-center items-center'>
+                            <Button className='mt-6 '>
+                                Register
+                            </Button>
+                        </div>
+
+                        <div className='md:mt-20 mt-6 mb-10 md:mb-0 flex space-x-6'>
                             <p>
-                                <span className='text-5xl'>00</span>
+                                <span className='text-2xl md:text-5xl'>00</span>
                                 <span className='text-xs'>H</span>
                             </p>
 
                             <p>
-                                <span className='text-5xl'>00</span>
+                                <span className='text-2xl md:text-5xl'>00</span>
                                 <span className='text-xs'>M</span>
                             </p>
 
                             <p>
-                                <span className='text-5xl'>00</span>
+                                <span className='text-2xl md:text-5xl'>00</span>
                                 <span className='text-xs'>S</span>
                             </p>
                         </div>

@@ -3,7 +3,6 @@ import twitter from '../assets/twitter.png';
 import linkedin from '../assets/linkedin.png';
 import facebook from '../assets/facebook.png';
 import instagram from '../assets/instagram.png';
-import Button from '../components/elements/Button';
 import lens from '../assets/contact-lens.png';
 import lens1 from '../assets/contact-lens-1.png';
 import { useState } from 'react';
@@ -137,10 +136,10 @@ const Contact = () => {
             >
               {
                 (
-                  { values, errors, touched, handleChange, handleSubmit }:
+                  { values, errors, touched, handleChange,  }:
                     {
                       values: any, errors: any,
-                      touched: any, handleChange: any, handleSubmit: any
+                      touched: any, handleChange: any,
                     }
                 ) => (
                   <>

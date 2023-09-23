@@ -16,7 +16,7 @@ const Footer = () => {
             <img src={whiteStar} alt="star" className='absolute top-10 left-6' />
             <div className='relative mx-auto md:w-10/12 py-20'>
 
-                <div className='grid grid-cols-4 gap-x-4'>
+                <div className='grid space-y-6 md:space-y-0 md:p-0 p-4 md:grid-cols-4 gap-x-4'>
                     <div className='relative flex col-span-2 flex-col justify-between'>
                         <div>
                             <img src={logo} alt="logo" />

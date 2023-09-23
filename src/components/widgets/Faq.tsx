@@ -15,11 +15,11 @@ const Faq = () => {
     return (
         <section id="faq">
             <Card>
-                <Container className='grid grid-cols-2 gap-x-10'>
+                <Container className='md:grid md:p-0 p-4 grid-cols-2 gap-x-10'>
                     <div className='flex items-center justify-center relative'>
                         <div className='relative z-20'>
                             <img className='absolute -top-10 left-8' src={brightStar} alt="star icon" />
-                            <h2 className='text-4xl relative font-bold'>
+                            <h2 className='text-center md:text-left text-2xl md:text-4xl relative font-bold'>
                                 <span>
                                     Frequently Ask
                                 </span> <br />
@@ -30,7 +30,7 @@ const Faq = () => {
                                 
                             </h2>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p className='text-center md:text-left text-xs md:text-sm mt-6 leading-7'>
                                 We got answers to the questions that you might
                                 want to ask about getlinked Hackathon 1.0
                             </p>
@@ -76,7 +76,7 @@ const Faq = () => {
 
                     </div>
 
-                    <div className='flex items-center justify-center'>
+                    <div className='md:mt-0 mt-20 flex items-center justify-center'>
                         <div className='relative'>
                         <img className='absolute bottom-0 left-0' src={star1} alt="star icon" />
                             <img className='absolute top-0 right-0' src={faqBrightStar} alt="faq image" />

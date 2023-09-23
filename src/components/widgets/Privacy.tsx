@@ -14,7 +14,7 @@ const Privacy = () => {
             <img className='absolute z-40 top-10 inset-x-1/2' src={faqBrightStar} alt="faq image" />
             <img className='absolute z-10 top-40 -left-20' src={lens} alt="blur image" />
             <div className='my-10'>
-                <Container className='grid grid-cols-2 gap-x-2 py-24'>
+                <Container className='md:grid p-4 md:p-0 grid-cols-2 gap-x-2 py-24'>
                     <div className='flex items-center justify-center relative'>
                         <div className='relative z-20'>
                             <h2 className='text-4xl relative font-bold'>
@@ -87,7 +87,7 @@ const Privacy = () => {
                     <div className='flex  items-center relative justify-center'>
                         <div>
                             <img src={lock} alt="icon" className='relative z-40' />
-                            <img src={lockSign} alt="lock sign" className='absolute z-10 top-0 left-20' />
+                            <img src={lockSign} alt="lock sign" className='absolute z-10 top-0 md:left-20' />
                         </div>
                     </div>
                 </Container>

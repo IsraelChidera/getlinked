@@ -6,13 +6,13 @@ import ball from '../../assets/ball.png';
 
 const Timeline = () => {
     return (
-        <section id="timeline">
+        <section id="timeline relative overflow-y-hidden">
             <Card className='pb-20'>
                 <Container>
                     <div className='flex items-center justify-center'>
                         <div>
-                            <h1 className='text-4xl font-bold text-center'>Timeline</h1>
-                            <p className="text-sm w-80 text-center leading-6 mt-2">Here is the breakdown of the time we anticipate
+                            <h1 className='text-2xl md:text-4xl font-bold text-center'>Timeline</h1>
+                            <p className="text-xs md:text-sm w-80 text-center leading-6 mt-2">Here is the breakdown of the time we anticipate
                                 using for the upcoming event.</p>
                         </div>
                     </div>

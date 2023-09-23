@@ -29,8 +29,8 @@ const Register = () => {
         group_size: '',
         privacy_policy_accepted: false,
     });
-    const [successMessage, setSuccessMessage] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
+
+
 
     const validationSchema = yup.object().shape({
         team_name: yup.string().required('Team Name is required'),
@@ -112,8 +112,7 @@ const Register = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                console.log(result);
-                setSuccessMessage('Registration successful! Check your email for next steps.');
+                console.log(result);                
                 setOpen(true);
                 setErrors("");
                 resetForm();
@@ -129,8 +128,7 @@ const Register = () => {
         } catch (error: any) {
             console.error('Error:', error);
             console.error('Validation Error:', setValidationErrors(error.errors));
-        } finally {
-            setIsSubmitting(false);
+        } finally {            
         }
 
     };

@@ -14,7 +14,7 @@ const Prizes = () => {
         <div className='relative z-30'>
             <img className='absolute z-10 -top-20 left-0' src={lens} alt="star icon" />
             <Card>
-                <Container className='flex items-center justify-between'>
+                <Container className='md:flex items-center justify-between'>
                     <div className='relative flex items-center justify-center'>
                         <img className='absolute -top-10 left-8' src={brightStar} alt="star icon" />
                         <div className='relative z-20'>
@@ -35,7 +35,7 @@ const Prizes = () => {
                             </div>
                         </div>
 
-                        <div className='flex mt-40 justify-between space-x-6'>
+                        <div className='hidden md:flex mt-40 justify-between space-x-6'>
                             <div className='relative pt-20'>
                                 <img className='absolute z-50 bottom-0 right-0' src={star2} alt="star icon" />
                                 <img className='absolute z-50 top-0 right-0' src={star2} alt="star icon" />

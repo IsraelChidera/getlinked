@@ -14,7 +14,7 @@ const KeyAttributes = () => {
         <section id="overview" className='relative z-20'>
             <img className='absolute -top-10 left-48' src={star} alt="star icon" />
             <Card>
-                <Container className='grid grid-cols-2 gap-x-4 '>
+                <Container className='md:grid grid-cols-2 gap-x-4 '>
                     <div className='relative z-40 flex items-center justify-center'>
                         <img src={dullStar} alt="dull star" className='absolute'/>
                         <div>
@@ -25,7 +25,7 @@ const KeyAttributes = () => {
                         <img src={brightStar} className='absolute bottom-1 right-0' />
                     </div>
 
-                    <div className='flex items-center justify-center'>
+                    <div className='md:p-0 p-4 md:text-left text-center flex items-center justify-center'>
                         <div className='space-y-6'>
                             <h2 className='text-4xl relative font-bold'>
                                 <span>
