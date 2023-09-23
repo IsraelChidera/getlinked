@@ -200,7 +200,7 @@ const Timeline = () => {
                         </div>
                     </div>
 
-                    <div className='mt-20'>
+                    <div className='md:hidden block mt-20'>
                         <div className='space-y-6'>
                             <div className='flex justify-between space-x-4'>
                                 <div className=''>
