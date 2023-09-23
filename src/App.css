@@ -23,6 +23,13 @@ body {
   border-radius: 4px;
 }
 
+.abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .congrats-dialog-box {
   background: url("../src/assets/congrat-bg.png") fixed;
   background-position: center;
@@ -47,6 +54,7 @@ body {
 .btn-link {
   border: 2px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(154, 57, 255), rgb(255, 41, 185)) 1;
+  border-image: linear-gradient(to bottom, rgb(154, 57, 255), rgb(255, 41, 185))
+    1;
   border-radius: 4px;
 }
