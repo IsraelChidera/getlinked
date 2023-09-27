@@ -78,13 +78,13 @@ const Faq = () => {
 
                     <div className='md:mt-0 mt-20 flex items-center justify-center'>
                         <div className='relative'>
-                        <img className='absolute bottom-0 left-0' src={star1} alt="star icon" />
-                            <img className='absolute top-0 right-0' src={faqBrightStar} alt="faq image" />
-                            <img className='absolute inset-x-2/4' src={faqBrightStar2} alt="faq image" />
+                        <img className='absolute animate-pulse bottom-0 left-0' src={star1} alt="star icon" />
+                            <img className='animate-pulse absolute top-0 right-0' src={faqBrightStar} alt="faq image" />
+                            <img className='absolute animate-pulse inset-x-2/4' src={faqBrightStar2} alt="faq image" />
                             <img src={faqImg} alt="faq image" />
-                            <img className='absolute top-0 left-0' src={faq1} alt="faq image" />
-                            <img className='absolute -top-10 left-40' src={faq2} alt="faq image" />
-                            <img className='absolute -top-10 right-40' src={faq3} alt="faq image" />
+                            <img className='absolute animate-bounce top-0 left-0' src={faq1} alt="faq image" />
+                            <img className='absolute animate-bounce -top-10 left-40' src={faq2} alt="faq image" />
+                            <img className='absolute animate-bounce -top-10 right-40' src={faq3} alt="faq image" />
                         </div>
                     </div>
                 </Container>

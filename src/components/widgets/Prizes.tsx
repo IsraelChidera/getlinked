@@ -29,7 +29,7 @@ const Prizes = () => {
                     </div>
 
                     <div className='relative flex items-center justify-center'>
-                        <img className='absolute md:-top-10 left-8' src={brightStar} alt="star icon" />
+                        <img className='absolute animate-pulse md:-top-10 left-8' src={brightStar} alt="star icon" />
                         <div className='relative p-6 z-20'>
                             <img src={prizeImg} alt="prize image" />
                         </div>
@@ -49,10 +49,10 @@ const Prizes = () => {
 
                         <div className='flex px-6 md:px-0 mt-4 md:mt-40 justify-between space-x-2 md:space-x-6'>
                             <div className='relative pt-20'>
-                                <img className='absolute md:z-50 bottom-0 right-0' src={star2} alt="star icon" />
-                                <img className='absolute md:z-50 top-0 right-0' src={star2} alt="star icon" />
+                                <img className='absolute animate-pulse md:z-50 bottom-0 right-0' src={star2} alt="star icon" />
+                                <img className='absolute animate-pulse md:z-50 top-0 right-0' src={star2} alt="star icon" />
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
-                                    <img className='relative -top-12 md:-top-20' src={silver} alt="silver medal image" />
+                                    <img className='relative hover:animate-bounce animate-none z-40 -top-12 md:-top-20' src={silver} alt="silver medal image" />
 
                                     <div className='space-y-2 relative -top-10 text-center'>
                                         <h3 className='md:text-2xl text-xs font-bold'>2nd</h3>
@@ -64,7 +64,7 @@ const Prizes = () => {
 
                             <div className='relative md:mt-0 mt-20'>
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
-                                    <img className='relative -top-20' src={gold} alt="silver medal image" />
+                                    <img className='hover:animate-bounce animate-none z-40 relative -top-20' src={gold} alt="silver medal image" />
 
                                     <div className='space-y-2 relative -top-10 text-center'>
                                         <h3 className='text-xs md:text-4xl font-bold'>1st</h3>
@@ -76,7 +76,7 @@ const Prizes = () => {
 
                             <div className='relative pt-20'>
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
-                                    <img className='relative -top-12 md:-top-20' src={bronze} alt="bronze medal image" />
+                                    <img className='relative hover:animate-bounce z-40 animate-none -top-12 md:-top-20' src={bronze} alt="bronze medal image" />
 
                                     <div className='space-y-2 relative -top-10 text-center'>
                                         <h3 className='text-xs md:text-2xl font-bold'>3rd</h3>

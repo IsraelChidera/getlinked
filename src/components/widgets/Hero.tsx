@@ -10,7 +10,7 @@ import chain from '../../assets/chain.svg';
 import fire from '../../assets/fire.svg';
 import bulb from '../../assets/bulb.svg';
 import Typewriter from '../../utilities/Typewriter';
-import { TypingText } from '../../utilities/CustomText';
+// import { TypingText } from '../../utilities/CustomText';
 
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
                     {/* <p className='md:text-base text-sm'>
                         Igniting a Revolution in HR Innovation
                     </p> */}
-                    <TypingText title="Igniting a Revolution in HR Innovation " />
+                    {/* <TypingText title="Igniting a Revolution in HR Innovation " /> */}
                     <Typewriter text="Igniting a Revolution in HR Innovation " delay={200}  />
                     <img className='' src={line} alt="line icon" />
                 </div>

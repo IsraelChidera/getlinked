@@ -20,7 +20,7 @@ const Partners = () => {
         <div className='relative '>
             <img src={lens} alt="purple lens" className='z-10 absolute top-0 left-0' />
             <img src={lens2} alt="purple lens" className='z-10 absolute bottom-0 right-0' />
-            <img className='absolute -top-10 left-20' src={brightStar} alt="star icon" />
+            <img className='absolute animate-pulse -top-10 left-20' src={brightStar} alt="star icon" />
             <Card className='py-6'>
                 <Container>
                     <div className='flex items-center justify-center'>
@@ -36,7 +36,7 @@ const Partners = () => {
                     </div>
 
                     <div className='relative z-40 md:z-50 p-10 mt-10'>
-                        <img className='absolute md:z-50 inset-x-1/2 bottom-0' src={star2} alt="star icon" />
+                        <img className='absolute animate-pulse md:z-50 inset-x-1/2 bottom-0' src={star2} alt="star icon" />
                         <div className='hidden md:grid grid-cols-3 gap-y-10'>
                             <div className='relative flex items-center justify-center'>
                                 <img src={product1} className="" alt="logo that support" />
@@ -79,7 +79,7 @@ const Partners = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center justify-center'>
+                        <div className='md:hidden flex items-center justify-center'>
                             <div>
                                 <img src={partners} alt="partners" />
                             </div>
