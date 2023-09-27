@@ -37,32 +37,32 @@ const Faq = () => {
 
                             <div className='mt-10 text-sm'>
                                 <ul className='space-y-10'>
-                                    <li className='flex border-b border-primary pb-3 items-center justify-between'>
+                                    <li data-aos="fade-up" className='flex border-b border-primary pb-3 items-center justify-between'>
                                         <p> Can I work on a project I started before the hackathon? </p>
                                         <img src={plus} alt="plus icon" />
                                     </li>
 
-                                    <li className='flex border-b border-primary pb-3 items-center justify-between'>
+                                    <li data-aos="fade-up" data-aos-duration="2500" className='flex border-b border-primary pb-3 items-center justify-between'>
                                         <p> What happens if I need help during the hackathon? </p>
                                         <img src={plus} alt="plus icon" />
                                     </li>
 
-                                    <li className='flex border-b border-primary pb-3 items-center justify-between'>
+                                    <li data-aos="fade-up" data-aos-duration="2500" className='flex border-b border-primary pb-3 items-center justify-between'>
                                         <p> What happens if I don't have an idea for a project? </p>
                                         <img src={plus} alt="plus icon" />
                                     </li>
 
-                                    <li className='flex border-b border-primary pb-3 items-center justify-between'>
+                                    <li data-aos="fade-up" data-aos-duration="2500" className='flex border-b border-primary pb-3 items-center justify-between'>
                                         <p> Can I join a team or do I have to come with one? </p>
                                         <img src={plus} alt="plus icon" />
                                     </li>
 
-                                    <li className='flex border-b border-primary pb-3 items-center justify-between'>
+                                    <li data-aos="fade-up" data-aos-duration="2500" className='flex border-b border-primary pb-3 items-center justify-between'>
                                         <p> What happens after the hackathon ends?</p>
                                         <img src={plus} alt="plus icon" />
                                     </li>
 
-                                    <li className='flex border-b border-primary pb-3 items-center justify-between'>
+                                    <li data-aos="fade-up" data-aos-duration="2500" className='flex border-b border-primary pb-3 items-center justify-between'>
                                         <p> Can I work on a project I started before the hackathon? </p>
                                         <img src={plus} alt="plus icon" />
                                     </li>

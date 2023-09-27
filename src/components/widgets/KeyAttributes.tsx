@@ -27,7 +27,7 @@ const KeyAttributes = () => {
 
                     <div className='md:p-0 p-4 md:text-left text-center flex items-center justify-center'>
                         <div className='space-y-6'>
-                            <h2 className='text-4xl relative font-bold'>
+                            <h2 data-aos="fade-up" data-aos-duration="500" className='text-4xl relative font-bold'>
                                 <span>
                                     Judging Criteria
                                 </span> <br />
@@ -36,7 +36,7 @@ const KeyAttributes = () => {
                                 </span>
                             </h2>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p data-aos="fade-up"  className='text-sm mt-6 leading-7'>
                                 <span className='text-primary font-bold'>
                                     Innovation and Creativity: </span>
                                 Evaluate the uniqueness and creativity of the
@@ -44,7 +44,7 @@ const KeyAttributes = () => {
                                 way or introduces innovative features.
                             </p>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p data-aos="fade-up"className='text-sm mt-6 leading-7'>
                                 <span className='text-primary font-bold'>
                                     Functionality:  </span>
                                 Assess how well the solution works. Does it perform its
@@ -52,7 +52,7 @@ const KeyAttributes = () => {
                                 consider the completeness and robustness of the solution.
                             </p>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p data-aos="fade-up"className='text-sm mt-6 leading-7'>
                                 <span className='text-primary font-bold'>
                                     Impact and Relevance: </span>
                                 Determine the potential impact of the solution
@@ -61,7 +61,7 @@ const KeyAttributes = () => {
                                 economic, or environmental benefits.
                             </p>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p data-aos="fade-up"className='text-sm mt-6 leading-7'>
                                 <span className='text-primary font-bold'>
                                     Technical Complexity: </span>
                                 Evaluate the technical sophistication of the solution.
@@ -69,7 +69,7 @@ const KeyAttributes = () => {
                                 technologies or algorithms, and the scalability of the solution.
                             </p>
 
-                            <p className='text-sm mt-6 leading-7'>
+                            <p data-aos="fade-up"className='text-sm mt-6 leading-7'>
                                 <span className='text-primary font-bold'>
                                     Adherence to Hackathon Rules: </span>
                                 Judges will Ensure that the team adhered
@@ -77,7 +77,7 @@ const KeyAttributes = () => {
                                 specific technologies or APIs, and any other competition-specific requirements.
                             </p>
 
-                            <Button>
+                            <Button data-aos="fade-up">
                                 <span>
                                     Read More
                                 </span>

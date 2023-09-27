@@ -20,10 +20,6 @@ const Hero = () => {
 
             <div className='flex justify-end pr-24'>
                 <div className=''>
-                    {/* <p className='md:text-base text-sm'>
-                        Igniting a Revolution in HR Innovation
-                    </p> */}
-                    {/* <TypingText title="Igniting a Revolution in HR Innovation " /> */}
                     <Typewriter text="Igniting a Revolution in HR Innovation " delay={200}  />
                     <img className='' src={line} alt="line icon" />
                 </div>
@@ -33,13 +29,13 @@ const Hero = () => {
 
                 <div className='flex justify-center items-center relative'>
                     <img src={star} alt="star" className='absolute -top-4 left-20' />
-                    <div className='relative md:z-50 '>
+                    <div  className='relative md:z-50 '>
                         <div>
-                            <h1 className='text-center md:text-left text-2xl md:text-6xl font-bold md:relative'>
+                            <h1 data-aos="fade-up" data-aos-duration="500" className='text-center md:text-left text-2xl md:text-6xl font-bold md:relative'>
                                 <span>getlinked Tech</span>
                                 <img className='hover:animate-pulse absolute md:-top-14 -top-6 md:right-28 right-20 md:w-12 w-6 ' src={bulb} alt="chain" />
                             </h1>
-                            <div className='text-2xl md:text-6xl font-bold flex space-x-2 items-center'>
+                            <div data-aos="fade-up" data-aos-duration="1000" className='text-2xl md:text-6xl font-bold flex space-x-2 items-center'>
                                 <h1>
                                     Hackathon <span className='text-primary'> 1.0 </span>
                                 </h1>
@@ -48,7 +44,7 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        <p className='md:text-sm text-xs text-center md:text-left mt-4'>
+                        <p data-aos="fade-up" className='md:text-sm text-xs text-center md:text-left mt-4'>
                             Participate in getlinked tech Hackathon 2023 stand <br />
                             a chance to win a Big prize
                         </p>

@@ -17,7 +17,7 @@ const Introduction = () => {
 
                 <div className='mt-6 md:mt-0 flex items-center justify-center'>
                     <div>
-                        <h2 className='text-2xl md:text-4xl text-center md:text-left relative font-bold'>
+                        <h2 data-aos="fade-up" data-aos-duration="1000" className='text-2xl md:text-4xl text-center md:text-left relative font-bold'>
                             <span>
                                 Introduction to getlinked
                             </span> <br />
@@ -28,7 +28,7 @@ const Introduction = () => {
                             <img className='absolute top-1 right-10' src={star3} alt="star icon" />
                         </h2>
 
-                        <p className='text-xs md:text-left text-center p-4 md:p-0 md:text-sm mt-6 leading-7'>
+                        <p data-aos="fade-up" data-aos-duration="2000" className='text-xs md:text-left text-center p-4 md:p-0 md:text-sm mt-6 leading-7'>
                             Our tech hackathon is a melting pot of visionaries, and its purpose is as
                             clear as day: to shape the future. Whether you're a coding genius, a
                             design maverick, or a concept wizard, you'll have the chance to transform

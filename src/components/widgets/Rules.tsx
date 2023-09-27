@@ -18,7 +18,7 @@ const Rules = () => {
                 </div>
                 <div className='flex  items-center justify-center relative'>
                     <div className='relative z-20'>
-                        <h2 className='text-center md:text-left text-2xl md:text-4xl relative font-bold'>
+                        <h2 data-aos="fade-up" data-aos-duration="500" className='text-center md:text-left text-2xl md:text-4xl relative font-bold'>
                             <span>
                                 Rules and
                             </span> <br />
@@ -29,7 +29,7 @@ const Rules = () => {
                             <img className='absolute top-0 right-40' src={star1} alt="star icon" />
                         </h2>
 
-                        <p className='text-xs md:text-left text-center md:text-sm mt-6 leading-7 '>
+                        <p data-aos="fade-up" data-aos-duration="2000" className='text-xs md:text-left text-center md:text-sm mt-6 leading-7 '>
                             Our tech hackathon is a melting pot of visionaries, and its purpose is as
                             clear as day: to shape the future. Whether you're a coding genius, a
                             design maverick, or a concept wizard, you'll have the chance to transform

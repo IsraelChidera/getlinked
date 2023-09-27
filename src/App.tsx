@@ -6,7 +6,9 @@ import Navbar from './components/widgets/Navbar';
 import Register from './pages/Register';
 import NoMatch from './pages/NoMatch';
 
+
 function App() {
+
 
   return (
     <div className='bg-secondary relative text-white'>

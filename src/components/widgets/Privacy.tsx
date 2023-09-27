@@ -17,7 +17,7 @@ const Privacy = () => {
                 <Container className='md:grid p-4 md:p-0 grid-cols-2 gap-x-2 py-24'>
                     <div className='flex items-center justify-center relative'>
                         <div className='relative z-20'>
-                            <h2 className='text-2xl text-center md:text-left md:text-4xl relative font-bold'>
+                            <h2 data-aos="fade-up" className='text-2xl text-center md:text-left md:text-4xl relative font-bold'>
                                 <span>
                                     Privacy Policy and
                                 </span> <br  />
@@ -26,16 +26,16 @@ const Privacy = () => {
                                 </span>
                             </h2>
 
-                            <p className='text-center md:text-left text-xs mt-2'>
+                            <p data-aos="fade-up" className='text-center md:text-left text-xs mt-2'>
                                 Last updated on September 12, 2023
                             </p>
 
-                            <p className='text-center md:text-left text-sm mt-6 leading-7'>
+                            <p data-aos="fade-up" className='text-center md:text-left text-sm mt-6 leading-7'>
                                 Below are our privacy & policy, which outline a lot of goodies.
                                 it's our aim to always take of our participant
                             </p>
 
-                            <div className='mt-10'>
+                            <div data-aos="fade-up" data-aos-duration="2500" className='mt-10'>
                                 <div
                                     className='relative md:z-50 rounded-md py-16 px-4 md:px-16'
                                     style={{ background: "#d9d9d908", border: "1px solid #d434fe", }}
@@ -86,8 +86,8 @@ const Privacy = () => {
 
                     <div className='flex mt-6 md:mt-0  items-center relative justify-center'>
                         <div>
-                            <img src={lock} alt="icon" className='relative z-40' />
-                            <img src={lockSign} alt="lock sign" className='absolute z-10 top-0 md:left-20' />
+                            <img data-aos="fade-up" src={lock} alt="icon" className='relative z-40' />
+                            <img src={lockSign} data-aos="fade-down" alt="lock sign" className='absolute z-10 top-0 md:left-20' />
                         </div>
                     </div>
                 </Container>

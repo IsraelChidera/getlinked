@@ -52,7 +52,7 @@ const Prizes = () => {
                                 <img className='absolute animate-pulse md:z-50 bottom-0 right-0' src={star2} alt="star icon" />
                                 <img className='absolute animate-pulse md:z-50 top-0 right-0' src={star2} alt="star icon" />
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
-                                    <img className='relative hover:animate-bounce animate-none z-40 -top-12 md:-top-20' src={silver} alt="silver medal image" />
+                                    <img className='relative animate-bounce z-40 -top-12 md:-top-20' src={silver} alt="silver medal image" />
 
                                     <div className='space-y-2 relative -top-10 text-center'>
                                         <h3 className='md:text-2xl text-xs font-bold'>2nd</h3>
@@ -64,7 +64,7 @@ const Prizes = () => {
 
                             <div className='relative md:mt-0 mt-20'>
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
-                                    <img className='hover:animate-bounce animate-none z-40 relative -top-20' src={gold} alt="silver medal image" />
+                                    <img className='animate-bounce z-40 relative -top-20' src={gold} alt="silver medal image" />
 
                                     <div className='space-y-2 relative -top-10 text-center'>
                                         <h3 className='text-xs md:text-4xl font-bold'>1st</h3>
@@ -76,7 +76,7 @@ const Prizes = () => {
 
                             <div className='relative pt-20'>
                                 <div style={{ background: "#d434fe1f", border: "1px solid #d434fe" }} className='rounded-lg'>
-                                    <img className='relative hover:animate-bounce z-40 animate-none -top-12 md:-top-20' src={bronze} alt="bronze medal image" />
+                                    <img className='relative animate-bounce z-40 -top-12 md:-top-20' src={bronze} alt="bronze medal image" />
 
                                     <div className='space-y-2 relative -top-10 text-center'>
                                         <h3 className='text-xs md:text-2xl font-bold'>3rd</h3>

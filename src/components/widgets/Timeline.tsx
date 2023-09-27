@@ -12,26 +12,30 @@ const Timeline = () => {
                 <Container>
                     <div className='flex items-center justify-center'>
                         <div>
-                            <h1 className='text-2xl md:text-4xl font-bold text-center'>Timeline</h1>
-                            <p className="text-xs md:text-sm w-80 text-center leading-6 mt-2">Here is the breakdown of the time we anticipate
-                                using for the upcoming event.</p>
+                            <h1 data-aos="fade-up" className='text-2xl md:text-4xl font-bold text-center'>Timeline</h1>
+                            <p data-aos="fade-up" data-aos-duration="500" className="text-xs md:text-sm w-80 text-center leading-6 mt-2">
+                                Here is the breakdown of the time we anticipate
+                                using for the upcoming event.
+                            </p>
                         </div>
                     </div>
 
-                    <div className='hidden md:block mt-40'>
-                        <div className='grid grid-cols-5 gap-x-6'>
+                    <div className='space-y-4 hidden md:block mt-40'>
+                        <div className='grid grid-cols-5 gap-x-6 '>
                             <div className='col-span-2 text-right'>
                                 <h3 className='text-lg text-primary font-bold'>Hackathon Announcement</h3>
-                                <p className='mt-2 text-xs'>
+                                <p data-aos="fade-right" data-aos-duration="500" className='mt-2 text-xs'>
                                     The getlinked tech hackathon 1.0 is formally announced
                                     to the general public and teams begin to get ready to register
                                 </p>
                             </div>
 
                             <div className='col-span-1 flex relative justify-center items-center'>
-                                <img className=' md:z-20' src={ball} alt="ball" />
-                                <p className='abs md:z-50 text-3xl '>1</p>
-                                <img src={line3} alt="line" className='abs -top-16' />
+                                <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="150" >
+                                    <img className=' md:z-20' src={ball} alt="ball" />
+                                    <p className='abs md:z-50 text-3xl '>1</p>
+                                </div>
+                                <img data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" src={line3} alt="line" className='abs -top-36' />
                             </div>
 
                             <div className='col-span-2 flex items-center'>
@@ -39,11 +43,11 @@ const Timeline = () => {
                             </div>
                         </div>
 
-                        <div className='grid grid-cols-5 gap-x-6'>
+                        <div className=' grid grid-cols-5 gap-x-6'>
                             <div className='col-span-2 text-right'>
                             </div>
 
-                            <div className='col-span-1 flex relative justify-center items-center'>
+                            <div data-aos="fade-up" data-aos-duration="1000" className='col-span-1 my-4 flex relative justify-center items-center'>
                                 <img src={line4} alt="" />
                             </div>
 
@@ -52,18 +56,18 @@ const Timeline = () => {
                             </div>
                         </div>
 
-                        <div className='grid grid-cols-5 gap-x-6'>
+                        <div className=' grid grid-cols-5 gap-x-6'>
 
                             <div className='col-span-2 flex items-center justify-end'>
                                 <p className='text-lg font-bold text-primary'> November 18, 2023</p>
                             </div>
 
-                            <div className='col-span-1 flex relative justify-center items-center'>
+                            <div  className='col-span-1 flex relative justify-center items-center'>
                                 <img className=' md:z-20' src={ball} alt="ball" />
                                 <p className='abs md:z-50 text-3xl '>2</p>
                             </div>
 
-                            <div className='col-span-2 text-left'>
+                            <div data-aos="fade-left" className='col-span-2 text-left'>
                                 <h3 className='text-lg text-primary font-bold'>Teams Registration begins</h3>
                                 <p className='mt-2 text-xs'>
                                     Interested teams can now show their interest in the getlinked tech hackathon 1.0 2023 by proceeding to register
@@ -75,7 +79,7 @@ const Timeline = () => {
                             <div className='col-span-2 text-right'>
                             </div>
 
-                            <div className='col-span-1 flex relative justify-center items-center'>
+                            <div data-aos="fade-up" data-aos-duration="1000" className='col-span-1 flex relative justify-center items-center'>
                                 <img src={line4} alt="" />
                             </div>
 
@@ -84,8 +88,8 @@ const Timeline = () => {
                             </div>
                         </div>
 
-                        <div className='grid grid-cols-5 gap-x-6'>
-                            <div className='col-span-2 text-right'>
+                        <div className=' grid grid-cols-5 gap-x-6'>
+                            <div data-aos="fade-right" data-aos-duration="1500" className='col-span-2 text-right'>
                                 <h3 className='text-lg text-primary font-bold'>Teams Registration ends</h3>
                                 <p className='mt-2 text-xs'>
                                     Interested Participants are no longer Allowed to register
@@ -95,7 +99,7 @@ const Timeline = () => {
                             <div className='col-span-1 flex relative justify-center items-center'>
                                 <img className=' md:z-20' src={ball} alt="ball" />
                                 <p className='abs md:z-50 text-3xl '>3</p>
-                                <img src={line3} alt="line" className='abs -top-16' />
+                                {/* <img data-aos="fade-up" data-aos-duration="1000" src={line3} alt="line" className='abs -top-24' /> */}
                             </div>
 
                             <div className='col-span-2 flex items-center'>
@@ -107,7 +111,7 @@ const Timeline = () => {
                             <div className='col-span-2 text-right'>
                             </div>
 
-                            <div className='col-span-1 flex relative justify-center items-center'>
+                            <div data-aos="fade-up" data-aos-duration="2000" className='col-span-1 flex relative justify-center items-center'>
                                 <img src={line4} alt="" />
                             </div>
 
@@ -116,7 +120,7 @@ const Timeline = () => {
                             </div>
                         </div>
 
-                        <div className='grid grid-cols-5 gap-x-6'>
+                        <div className=' grid grid-cols-5 gap-x-6'>
 
                             <div className='col-span-2 flex items-center justify-end'>
                                 <p className='text-lg font-bold text-primary'> November 18, 2023</p>
@@ -127,7 +131,7 @@ const Timeline = () => {
                                 <p className='abs md:z-50 text-3xl '>4</p>
                             </div>
 
-                            <div className='col-span-2 text-left'>
+                            <div data-aos="fade-left" data-aos-duration="2000" className='col-span-2 text-left'>
                                 <h3 className='text-lg text-primary font-bold'>Announcement of the accepted teams and ideas</h3>
                                 <p className='mt-2 text-xs'>
                                     All teams whom idea has been accepted into getlinked tech hackathon 1.0 2023 are formally announced
@@ -139,7 +143,7 @@ const Timeline = () => {
                             <div className='col-span-2 text-right'>
                             </div>
 
-                            <div className='col-span-1 flex relative justify-center items-center'>
+                            <div className='col-span-1 mb-2 flex relative justify-center items-center'>
                                 <img src={line4} alt="" />
                             </div>
 
@@ -149,7 +153,7 @@ const Timeline = () => {
                         </div>
 
                         <div className='grid grid-cols-5 gap-x-6'>
-                            <div className='col-span-2 text-right'>
+                            <div data-aos="fade-right" data-aos-duration="2500" className='col-span-2 text-right'>
                                 <h3 className='text-lg text-primary font-bold'>Getlinked Hackathon 1.0 Offically Begins</h3>
                                 <p className='mt-2 text-xs'>
                                     Accepted teams can now proceed to build their ground breaking skill driven solutions
@@ -159,7 +163,7 @@ const Timeline = () => {
                             <div className='col-span-1 flex relative justify-center items-center'>
                                 <img className=' z-20' src={ball} alt="ball" />
                                 <p className='abs z-50 text-3xl '>5</p>
-                                <img src={line3} alt="line" className='abs -top-16' />
+                                {/* <img src={line3} alt="line" className='abs -top-16' /> */}
                             </div>
 
                             <div className='col-span-2 flex items-center'>
@@ -171,7 +175,7 @@ const Timeline = () => {
                             <div className='col-span-2 text-right'>
                             </div>
 
-                            <div className='col-span-1 flex relative justify-center items-center'>
+                            <div data-aos="fade-up" data-aos-duration="1000" className='col-span-1 flex relative justify-center items-center'>
                                 <img src={line4} alt="" />
                             </div>
 
@@ -191,7 +195,7 @@ const Timeline = () => {
                                 <p className='abs md:z-50 text-3xl '>6</p>
                             </div>
 
-                            <div className='col-span-2 text-left'>
+                            <div data-aos="fade-left" data-aos-duration="1000" className='col-span-2 text-left'>
                                 <h3 className='text-lg text-primary font-bold'> Demo Day </h3>
                                 <p className='mt-2 text-xs'>
                                     Teams get the opportunity to pitch their projects to judges. The winner of the hackathon will also be announced on this day
