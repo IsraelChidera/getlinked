@@ -141,7 +141,7 @@ const Register = () => {
     };
 
     return (
-        <div className='py-10 md:px-0 px-3 overflow-hidden'>
+        <div className='py-20 md:px-0 px-3 '>
 
             <img src={lens} alt="lens" className='absolute top-0 left-0' />
             <img src={lens1} alt="lens" className='absolute bottom-0 right-0' />

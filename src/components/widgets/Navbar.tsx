@@ -23,7 +23,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav id="navbar" className='relative z-50 pt-10 px-4 md:px-0 pb-4 border-b border-b-gray-500/50 '>
+        <nav id="navbar" className='fixed w-full z-50 pt-10 px-4 md:px-0 pb-4 border-b border-b-gray-500/50 '>
             <Container className='flex justify-between md:grid grid-cols-2'>
                 <div>
                     <NavLink className="inline" to="/">

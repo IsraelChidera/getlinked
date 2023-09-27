@@ -10,11 +10,12 @@ import chain from '../../assets/chain.svg';
 import fire from '../../assets/fire.svg';
 import bulb from '../../assets/bulb.svg';
 import Typewriter from '../../utilities/Typewriter';
+import { TypingText } from '../../utilities/CustomText';
 
 
 const Hero = () => {
     return (
-        <header className='relative pt-10 border-b border-b-gray-500/50 '>
+        <header className='relative  pt-32 border-b border-b-gray-500/50 '>
             <img className='absolute z-10 -top-40 -left-20' src={lens1} alt="lens" />
 
             <div className='flex justify-end pr-24'>
@@ -22,6 +23,7 @@ const Hero = () => {
                     {/* <p className='md:text-base text-sm'>
                         Igniting a Revolution in HR Innovation
                     </p> */}
+                    <TypingText title="Igniting a Revolution in HR Innovation " />
                     <Typewriter text="Igniting a Revolution in HR Innovation " delay={200}  />
                     <img className='' src={line} alt="line icon" />
                 </div>
