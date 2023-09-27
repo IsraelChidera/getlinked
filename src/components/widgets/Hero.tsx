@@ -9,6 +9,7 @@ import bubbles from '../../assets/bubbles.png';
 import chain from '../../assets/chain.svg';
 import fire from '../../assets/fire.svg';
 import bulb from '../../assets/bulb.svg';
+import Typewriter from '../../utilities/Typewriter';
 
 
 const Hero = () => {
@@ -16,12 +17,13 @@ const Hero = () => {
         <header className='relative pt-10 border-b border-b-gray-500/50 '>
             <img className='absolute z-10 -top-40 -left-20' src={lens1} alt="lens" />
 
-            <div className='flex justify-end pr-10'>
-                <div className='relative'>
-                    <p className='md:text-base text-sm'>
+            <div className='flex justify-end pr-24'>
+                <div className=''>
+                    {/* <p className='md:text-base text-sm'>
                         Igniting a Revolution in HR Innovation
-                    </p>
-                    <img className='absolute -bottom-5 right-5' src={line} alt="line icon" />
+                    </p> */}
+                    <Typewriter text="Igniting a Revolution in HR Innovation " delay={200}  />
+                    <img className='' src={line} alt="line icon" />
                 </div>
             </div>
 
@@ -33,14 +35,14 @@ const Hero = () => {
                         <div>
                             <h1 className='text-center md:text-left text-2xl md:text-6xl font-bold md:relative'>
                                 <span>getlinked Tech</span>
-                                <img className=' absolute md:-top-14 -top-6 md:right-28 right-20 md:w-12 w-6 ' src={bulb} alt="chain" />
+                                <img className='hover:animate-pulse absolute md:-top-14 -top-6 md:right-28 right-20 md:w-12 w-6 ' src={bulb} alt="chain" />
                             </h1>
                             <div className='text-2xl md:text-6xl font-bold flex space-x-2 items-center'>
                                 <h1>
                                     Hackathon <span className='text-primary'> 1.0 </span>
                                 </h1>
-                                <img className='md:w-10 w-5 md:h-15 h-10' src={chain} alt="chain" />
-                                <img className='w-10 h-15' src={fire} alt="fire spark" />
+                                <img className='hover:animate-bounce md:w-10 w-5 md:h-15 h-10' src={chain} alt="chain" />
+                                <img className='w-10 h-15 hover:animate-pulse' src={fire} alt="fire spark" />
                             </div>
                         </div>
 
@@ -80,7 +82,7 @@ const Hero = () => {
 
                 <div className='relative'>
                     <img className='z-10 relative md:w-fit md:h-fit imageHero' src={heroImg} alt="hero image" />
-                    <img className='z-20 absolute -top-10 left-0' src={bubbles} alt="bubbles" />
+                    <img className='z-20 absolute -top-10 left-0 animate-pulse' src={bubbles} alt="bubbles" />
                 </div>
             </div>
         </header>
